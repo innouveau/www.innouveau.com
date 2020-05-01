@@ -3,6 +3,7 @@ $(window).ready(function(){
     initFilter();
     resizeVideo();
     initTiles();
+    startSloganAnimation();
 });
 
 let filter = {
