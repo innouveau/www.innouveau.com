@@ -1,0 +1,38 @@
+.arrow-link {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #333;
+    display: inline-block;
+    align-items: center;
+    justify-content: center;
+    color: @yellow;
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 1;
+    text-align: center;
+    padding-top: 11px;
+    position: relative;
+    top: -5px;
+    transform: scale(1);
+    transition: all 0.2s ease;
+    margin-left: 8px;
+
+    &.arrow-link--small {
+        width: 24px;
+        height: 24px;
+        font-size: 11px;
+        padding-top: 7px;
+        top: -1px;
+        margin-left: 5px;
+    }
+
+    &:after {
+        content: '→';
+    }
+
+    &:hover {
+        color: @red;
+        transform: scale(1.3);
+    }
+}

@@ -6,9 +6,7 @@
     <meta name="format-detection" content="telephone=no">
 
     <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/style.css" />
-    
-
-
+    <?php include('php/favicon.php'); ?>
     <?php include('php/fonts.php'); ?>
 
     <script src="<?php echo get_template_directory_uri(); ?>/assets/jquery/jquery-3.3.1.min.js"></script>

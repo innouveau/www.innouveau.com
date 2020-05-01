@@ -5,9 +5,8 @@
     <div class="quote__sub">
         Get in touch.
         <a
-            class="quote__link"
+            class="arrow-link"
             href="<?php echo get_template_directory_uri(); ?>">
-
         </a>
     </div>
 </div>

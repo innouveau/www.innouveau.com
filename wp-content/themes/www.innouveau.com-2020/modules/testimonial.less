@@ -1,13 +1,21 @@
 .testimonials {
     display: flex;
+    align-items: center;
 
     .testimonial__container {
         width: 600px;
         max-width: 100%;
         margin: 0 auto;
 
+        .testimonial__statement {
+            margin-bottom: 30px;
+            font-size: 18px;
+            text-align: center;
+            font-weight: 700;
+        }
+
         .testimonial {
-            background: #fff;
+            background: #c8dde6;
             padding: 24px;
             box-shadow: 2px 2px 12px rgba(0,0,0,0.2);
             margin-bottom: 20px;
@@ -66,6 +74,17 @@
             a {
                 color: @red;
             }
+        }
+    }
+
+    .testimonial__more {
+        width: 100px;
+        text-align: center;
+        line-height: 1.2;
+        color: #888;
+
+        .arrow-link {
+            margin: 8px 0 0 0;
         }
     }
 }

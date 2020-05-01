@@ -13,44 +13,51 @@
 <div class="content content--home">
     <div class="pagewrap">
         <div class="section">
-            <div class="intro">
-                Innouveau is a web development angency specialised in online applications.
-                We support companies, startups and (design)agencies
-                in webproject from A to Z.
-            </div>
-        </div>
-        <div class="section">
             <?php include('modules/slogan.php'); ?>
         </div>
         <div class="section">
-            <?php include('modules/follow-twitter.php'); ?>
+            <div class="intro">
+                <p>
+                Innouveau is a web development angency specialised in online applications.
+                We support companies, startups and (design)agencies
+                in their projects from A to Z.
+                </p>
+            </div>
+            <!--
+            <div class="intro-video">
+                <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/odYCqTXRvQ0"
+                    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            </div>-->
         </div>
-        <div class="section section--centered">
-            Check out some featured cases, to learn more about how we work,
-            what we are able to create, how we did it and what challenges we met on the way.
+        <div class="section">
+        Check out the featured case, to learn more about how we work,
+        what we are able to create, how we did it and what challenges we met on the way.<br><br>
            <?php include('modules/cases-preview.php'); ?>
         </div>
         <div class="section">
             <?php include('modules/get-in-touch.php'); ?>
         </div>
-         <div class="section section--centered">
-            <p>
-               Innouveau also creates awesome interactive infographics.<br>
-               Read more about <a href="<?php echo get_template_directory_uri(); ?>/infographics">infographics</a>.
-            </p>
-            <p>
-                <div class="home__images">
-                <img
-                    class="home__image"
-                    src="<?php echo get_template_directory_uri(); ?>/assets/img/other/innouveau-infographics-cleaner-air-for-all.png">
-                <img
-                    class="home__image"
-                    src="<?php echo get_template_directory_uri(); ?>/assets/img/other/innouveau-infographics-paper-recycling.png">
-                </div>
-            </p>
-        </div>
         <div class="section">
             <?php include('modules/testimonial.php'); ?>
+        </div>
+    </div>
+
+    <div class="section section--worked-for">
+        <div class="pagewrap">
+            <?php include('modules/worked-for.php'); ?>
+        </div>
+    </div>
+
+    <div class="pagewrap">
+        <div class="section section--centered">
+           <?php include('modules/infographics-preview.php'); ?>
+        </div>
+        <div class="section">
+            <?php include('modules/follow-twitter.php'); ?>
         </div>
     </div>
 </div>
