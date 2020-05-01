@@ -1,14 +1,31 @@
 <script>
-    let slogan = {
-        tick: 0,
-        words: {
-            code: 'code',
-            thatLoves: 'that loves',
-            design: 'design'
-        }
-    };
+    let slogan;
+
+    function resetSlogan() {
+        slogan = {
+            interval: null,
+            tick: 0,
+            words: {
+                code: 'code',
+                thatLoves: 'that loves',
+                design: 'design'
+            }
+        };
+    }
+
+    function initSlogan() {
+        startSloganAnimation();
+        $('.slogan').hover(() => {
+            if (!slogan.interval) {
+                startSloganAnimation();
+            }
+        });
+    }
 
     function startSloganAnimation() {
+        resetSlogan();
+        $('.slogan__chunk').html('');
+        slogan.tick = 0;
         slogan.interval = setInterval(() => {
             sloganTick();
         }, 100);
@@ -50,13 +67,14 @@
 
         if (slogan.tick === 30) {
             clearInterval(slogan.interval);
+            slogan.interval = null;
         }
     }
 </script>
 
 <div class="slogan">
     <b>Innouveau</b><br>
-    <span class="slogan__chunk-1 slogan__code"></span><span class="slogan__chunk-2 slogan__chunk--code"></span><span class="slogan__chunk-3 slogan__code "></span><br>
-    <span class="slogan__chunk-4 slogan__chunk--thatLoves"></span><br>
-    <span class="slogan__chunk-5 slogan__code"></span><span class="slogan__chunk-6 slogan__chunk--design"></span><span class="slogan__chunk-7 slogan__code"></span>
+    <span class="slogan__chunk slogan__chunk-1 slogan__code"></span><span class="slogan__chunk slogan__chunk-2 slogan__chunk--code"></span><span class="slogan__chunk slogan__chunk-3 slogan__code "></span><br>
+    <span class="slogan__chunk slogan__chunk-4 slogan__chunk--thatLoves"></span><br>
+    <span class="slogan__chunk slogan__chunk-5 slogan__code"></span><span class="slogan__chunk slogan__chunk-6 slogan__chunk--design"></span><span class="slogan__chunk slogan__chunk-7 slogan__code"></span>
 </div>
