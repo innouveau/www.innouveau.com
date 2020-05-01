@@ -5,5 +5,10 @@
                 <?php include('logo.php'); ?>
             </div>
         </div>
+        <div class="hamburger">
+            <div class="burger"></div>
+            <div class="burger"></div>
+            <div class="burger"></div>
+        </div>
     </div>
 </div>

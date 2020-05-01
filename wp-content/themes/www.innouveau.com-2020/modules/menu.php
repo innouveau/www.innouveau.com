@@ -1,3 +1,16 @@
+<script>
+    function initMenu() {
+        $('.menu__close').click(() => {
+            $('.menu').removeClass('menu--active');
+        });
+
+        $('.hamburger').click(() => {
+            $('.menu').addClass('menu--active');
+        });
+    }
+</script>
+
+
 <div class="menu">
     <?php
     $defaults = array(
@@ -20,4 +33,6 @@
      );
     wp_nav_menu( $defaults );
     ?>
+
+    <div class="menu__close"></div>
 </div>
