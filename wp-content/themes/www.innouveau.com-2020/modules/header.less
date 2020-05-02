@@ -1,25 +1,39 @@
 .header {
-    height: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0);
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background: rgba(245,245,245, 0);
+    z-index: 10;
+    height: 104px;
+    transition: all 0.2s ease;
 
-    > .pagewrap {
+    .identity {
+        width: 40%;
         display: flex;
-        justify-content: space-between;
-        height: 100%;
+        align-items: center;
+    }
 
-        .identity {
-            height: 100%;
-            padding: 10px;
-            width: 40%;
-            display: flex;
-            align-items: center;
+    &.header--small {
+        overflow: hidden;
+        height: 54px;
+        background: rgba(245,245,245, 1);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 
-            img {
-                height: 50px
+        .innouveau-logo {
+
+            h3 {
+                opacity: 0;
             }
-        }
 
-        .filter {
-            width: 60%;
+            h4 {
+                opacity: 0;
+            }
         }
     }
 }

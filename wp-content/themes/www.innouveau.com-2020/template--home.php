@@ -18,9 +18,10 @@
         <div class="section">
             <div class="intro">
                 <p>
-                Innouveau is a web development angency specialised in online applications.
+                Innouveau is a web development angency based in the Netherlands,
+                specialised in online applications.
                 We support companies, startups and (design)agencies
-                in their projects from A to Z.
+                in their online projects from A to Z.
                 </p>
             </div>
             <!--

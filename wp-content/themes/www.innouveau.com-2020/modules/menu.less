@@ -1,11 +1,11 @@
 .menu {
     position: fixed;
-    right: -600px;
+    right: -300px;
     top: 0;
-    width: 600px;
+    width: 300px;
     max-width: 100%;
     height: 100%;
-    z-index: 1;
+    z-index: 20;
     background: @yellow;
     box-shadow: -2px 0 8px rgba(0,0,0,0.2);
     transition: all 0.2s ease;
@@ -18,44 +18,44 @@
             list-style: none;
             display: block;
             border-top: 1px solid #fff;
-            background: @yellow;
-            padding: 10px 20px;
-            transition: all 0.2s ease;
 
-            > a {
+            a {
                 text-decoration: none;
                 display: block;
-                padding: 6px 12px;
+                padding: 10px 20px;
                 font-weight: 500;
                 font-size: 18px;
                 font-family: @serif;
+                background: @yellow;
+                transition: all 0.2s ease;
             }
 
             &:hover {
-                background: #fff;
-                padding: 60px 20px;
+
+                a {
+                    background: #fff;
+                    padding: 60px 20px;
+                }
             }
         }
     }
 
     .menu__close {
         position: absolute;
-        right: @standard-padding;
-        top: @standard-padding;
+        right: 9px;
+        top: 9px;
         cursor: pointer;
         width: 36px;
         height: 36px;
         text-align: center;
-        transform: scale(1);
-        transition: all 0.2s ease;
 
         &:before, &:after {
             position: absolute;
             left: 11px;
             top: 2px;
             content: ' ';
-            height: 22px;
-            width: 2px;
+            height: 30px;
+            width: 3px;
             background-color: #000;
         }
 
@@ -64,10 +64,6 @@
         }
         &:after {
             transform: rotate(-45deg);
-        }
-
-        &:hover {
-            transform: scale(1.3);
         }
     }
 
