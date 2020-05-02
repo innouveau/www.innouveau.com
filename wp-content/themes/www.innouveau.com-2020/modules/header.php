@@ -2,7 +2,6 @@
     function initHeader() {
         $(window).scroll(function (event) {
             let scroll = $(window).scrollTop();
-            console.log(scroll);
             if (scroll > 80) {
                 $('.header').addClass('header--small');
             } else {
@@ -18,6 +17,9 @@
             <?php include('logo.php'); ?>
         </div>
     </div>
+
+    <?php include('language.php'); ?>
+
     <div class="hamburger">
         <div class="burger"></div>
         <div class="burger"></div>

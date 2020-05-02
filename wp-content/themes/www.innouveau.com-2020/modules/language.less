@@ -1,0 +1,23 @@
+.languages {
+    display: flex;
+    align-items: center;
+    margin: 0 20px 6px 0;
+
+    a {
+        text-transform: uppercase;
+        color: #000;
+        text-decoration: none;
+        font-family: 'Roboto condensed', sans-serif;
+        font-size: 20px;
+        border-bottom: 1px solid transparent;
+        padding-bottom: 1px;
+
+        &.language--current {
+            border-bottom: 1px solid #000;
+        }
+    }
+
+    .language__divider {
+        margin: 0 4px;
+    }
+}

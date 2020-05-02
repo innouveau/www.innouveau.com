@@ -1,4 +1,7 @@
-    <?php include('modules/footer.php'); ?>
+<?php
+    $language_code = pll_current_language();
+    include('modules/' . $language_code . '/footer.php');
+?>
 
 <?php include('modules/menu.php'); ?>
 
