@@ -11,7 +11,7 @@
                     Weg en Bos 9D<br>
                     2661 DG Bergschenhoek
                     <br><br>
-                    <b>Postaddres</b><br>
+                    <b>Postadres</b><br>
                     Innouveau<br>
                     Prins Hendrikstraat 13D<br>
                     3071 LG Rotterdam

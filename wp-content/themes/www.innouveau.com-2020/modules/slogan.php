@@ -1,6 +1,11 @@
 <script>
     let slogan;
 
+    $(window).ready(function(){
+        initSlogan();
+    });
+
+
     function resetSlogan() {
         slogan = {
             interval: null,

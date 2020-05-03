@@ -43,7 +43,24 @@
             <?php include('modules/en/get-in-touch.php'); ?>
         </div>
         <div class="section">
-            <?php include('modules/testimonial.php'); ?>
+            <?php
+                $testimonial_id = 97;
+            ?>
+            <div class="testimonial-home">
+                <div class="testimonial-home__container">
+                    <div class="testimonial-home__statement">
+                        We are commited to both client and product:
+                    </div>
+                    <?php get_testimonial($testimonial_id); ?>
+                </div>
+                <div class="testimonial-home__more">
+                    Show more testimonials<br>
+                    <a
+                        class="arrow-link arrow-link--small"
+                        href="<?php echo get_template_directory_uri(); ?>">
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 

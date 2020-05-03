@@ -41,7 +41,24 @@
             <?php include('modules/nl/get-in-touch.php'); ?>
         </div>
         <div class="section">
-            <?php include('modules/testimonial.php'); ?>
+            <?php
+                $testimonial_id = 85;
+            ?>
+            <div class="testimonial-home">
+                <div class="testimonial-home__container">
+                    <div class="testimonial-home__statement">
+                        We zijn betrokken bij klant en product:
+                    </div>
+                    <?php echo get_testimonial($testimonial_id); ?>
+                </div>
+                <div class="testimonial-home__more">
+                    Toon meer testimonials<br>
+                    <a
+                        class="arrow-link arrow-link--small"
+                        href="<?php echo get_template_directory_uri(); ?>">
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 
