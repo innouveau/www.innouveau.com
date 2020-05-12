@@ -8,7 +8,7 @@ register_nav_menu('main', 'The main menu');
 add_theme_support('post-thumbnails');
 
 
-function get_testimonial($testimonial_id) {
+function get_testimonial($testimonial_id, $with_permalink) {
     $testimonial = get_post($testimonial_id);
     $testimonial_quote = $testimonial->post_content;
     $testimonial_client = get_the_title($testimonial_id);
@@ -39,14 +39,84 @@ function get_testimonial($testimonial_id) {
                     </div>
                 </div>
             </div>
+    <?php
+        if ($with_permalink) {
+    ?>
             <div class="testimonial__footer">
             Read more about this case:
                 <a href="<?php echo $case_permalink; ?>">
                      <?php echo $case_title; ?>
                 </a>
             </div>
+    <?php
+        }
+    ?>
         </div>
     <?php
+}
 
+function get_case($case_id) {
+        $case = get_post($case_id);
+        $case_about = $case->post_content;
+        $title = get_the_title($case_id);
+        $permalink = get_the_permalink($case_id);
+        $images = wp_get_attachment_image_src( get_post_thumbnail_id( $case_id ), 'full' );
+
+        $video_id = get_field('video', $case_id);
+    ?>
+        <div class="case">
+            <div class="case__title">
+                <?php echo $title; ?>
+            </div>
+            <div class="case__video">
+                <?php get_video($video_id); ?>
+            </div>
+            <div class="case__about">
+                <div class="case__about-preview">
+                    <?php echo $case_about; ?>
+                </div>
+                <p>
+                    Read more about this case:
+                    <a class="case__read-more" href="<?php echo $permalink; ?>">
+                         <?php echo $title; ?>
+                    </a>
+                </p>
+            </div>
+            <?php get_client($case_id); ?>
+        </div>
+    <?php
+}
+
+function get_client($case_id) {
+    $client = get_field('client', $case_id);
+    $client_name = $client['name'];
+    $client_description = $client['description'];
+    $client_logo = $client['logo'];
+    ?>
+    <div class="case__client">
+        <div
+            style="background-image: url(<?php echo $client_logo; ?>)"
+            class="case__avator">
+        </div>
+        <div class="case__client-description">
+            <div class="case__client-name">
+                <?php echo $client_name; ?>
+            </div>
+            <div class="case__client-position">
+                <?php echo $client_description; ?>
+            </div>
+        </div>
+    </div>
+    <?php
+}
+
+function get_video($video_id) {
+    ?>
+    <div class="video" data-video-id="<?php echo $video_id; ?>">
+        <div
+            id="video-<?php echo $video_id; ?>"
+            class="video__container"></div>
+    </div>
+    <?php
 }
 

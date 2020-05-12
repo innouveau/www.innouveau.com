@@ -10,6 +10,7 @@
     <?php include('php/fonts.php'); ?>
 
     <script src="<?php echo get_template_directory_uri(); ?>/assets/jquery/jquery-3.3.1.min.js"></script>
+    <script src="<?php echo get_template_directory_uri(); ?>/js/Video.js"></script>
     <script src="<?php echo get_template_directory_uri(); ?>/js/main.js"></script>
 
     

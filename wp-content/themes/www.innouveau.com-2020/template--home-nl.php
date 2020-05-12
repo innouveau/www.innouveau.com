@@ -49,7 +49,7 @@
                     <div class="testimonial-home__statement">
                         We zijn betrokken bij klant en product:
                     </div>
-                    <?php echo get_testimonial($testimonial_id); ?>
+                    <?php echo get_testimonial($testimonial_id, true); ?>
                 </div>
                 <div class="testimonial-home__more">
                     Toon meer testimonials<br>

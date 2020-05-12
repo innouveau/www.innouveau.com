@@ -51,7 +51,7 @@
                     <div class="testimonial-home__statement">
                         We are commited to both client and product:
                     </div>
-                    <?php get_testimonial($testimonial_id); ?>
+                    <?php get_testimonial($testimonial_id, true); ?>
                 </div>
                 <div class="testimonial-home__more">
                     Show more testimonials<br>

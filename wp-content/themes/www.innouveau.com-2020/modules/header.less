@@ -14,9 +14,26 @@
     transition: all 0.2s ease;
 
     .identity {
-        width: 40%;
         display: flex;
         align-items: center;
+
+        .identity__slogan {
+            position: absolute;
+            left: 96px;
+            top: 14px;
+            opacity: 0;
+            transition: all 0.2s ease;
+        }
+    }
+
+    .header__page-title {
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        font-family: @serif;
+        opacity: 0;
+        transition: all 0.2s ease;
     }
 
     &.header--small {
@@ -24,6 +41,10 @@
         height: 54px;
         background: rgba(245,245,245, 1);
         box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+
+        .header__page-title {
+            opacity: 1;
+        }
 
         .innouveau-logo {
 
@@ -35,5 +56,21 @@
                 opacity: 0;
             }
         }
+
+        &.header--small--delay {
+
+            .identity__slogan {
+                opacity: 1;
+            }
+        }
+
+
+    }
+}
+
+body.home {
+
+    .header__page-title {
+        display: none;
     }
 }
