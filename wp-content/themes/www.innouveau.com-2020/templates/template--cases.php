@@ -1,6 +1,6 @@
 <?php
 /*
- * 	Template Name: Testimonials
+ * 	Template Name: Cases
  */?>
 
  <?php get_header(); ?>
@@ -14,20 +14,24 @@
 
          <?php endwhile; endif; ?>
 
-         <div class="testimonials">
+         <div class="cases">
             <?php
 
                 $args = array(
-                    'category_name' => 'testimonial'
+                    'category__and' => array(2,22)
                 );
                 $q = new WP_Query($args);
                 if($q->have_posts()) : while($q->have_posts()) : $q->the_post();
-                    $testimonial_id = get_the_ID();
-                    get_testimonial($testimonial_id, true);
+                    $case_id = get_the_ID();
+                    get_case($case_id, 2);
                 endwhile;
                 endif;
             ?>
          </div>
+
+        <div class="section">
+            <?php include(dirname(__DIR__) . '/modules/follow-twitter.php'); ?>
+        </div>
      </div>
  </div>
 

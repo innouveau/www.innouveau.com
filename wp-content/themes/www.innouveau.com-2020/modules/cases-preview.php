@@ -1,17 +1,16 @@
 <?php
-    $case_id = 12;
+    $highlighted_case_id = 12;
+    $cases_id = 54;
 ?>
 
-<div class="cases">
+<div class="cases-preview">
     <div class="case__container">
-        <?php get_case($case_id); ?>
-
+        <?php get_case($highlighted_case_id, 3); ?>
     </div>
-    <div class="case__more">
+    <a
+        href="<?php echo get_the_permalink($cases_id); ?>"
+        class="case__more">
         Read all cases
-        <a
-            class="arrow-link arrow-link--small"
-            href="<?php echo get_template_directory_uri(); ?>">
-        </a>
-    </div>
+        <div class="arrow-link arrow-link--small"></div>
+    </a>
 </div>

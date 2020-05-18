@@ -55,33 +55,36 @@ function get_testimonial($testimonial_id, $with_permalink) {
     <?php
 }
 
-function get_case($case_id) {
+function get_case($case_id, $size) {
         $case = get_post($case_id);
-        $case_about = $case->post_content;
+        $intro = get_field('intro', $case_id);
         $title = get_the_title($case_id);
         $permalink = get_the_permalink($case_id);
         $images = wp_get_attachment_image_src( get_post_thumbnail_id( $case_id ), 'full' );
-
         $video_id = get_field('video', $case_id);
     ?>
-        <div class="case">
-            <div class="case__title">
+        <div class="case case--size-<?php echo $size; ?>">
+            <a
+                href="<?php echo $permalink; ?>"
+                class="case__title">
                 <?php echo $title; ?>
-            </div>
+            </a>
             <div class="case__video">
                 <?php get_video($video_id); ?>
             </div>
-            <div class="case__about">
+            <a
+                href="<?php echo $permalink; ?>"
+                class="case__about">
                 <div class="case__about-preview">
-                    <?php echo $case_about; ?>
+                    <?php echo $intro; ?>
                 </div>
                 <p>
                     Read more about this case:
-                    <a class="case__read-more" href="<?php echo $permalink; ?>">
+                    <span class="case__read-more" href="<?php echo $permalink; ?>">
                          <?php echo $title; ?>
-                    </a>
+                    </span>
                 </p>
-            </div>
+            </a>
             <?php get_client($case_id); ?>
         </div>
     <?php

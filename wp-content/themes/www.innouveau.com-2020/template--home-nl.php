@@ -33,16 +33,17 @@
                     allowfullscreen></iframe>
             </div>-->
         </div>
-        <div class="section">
+        <div class="section section--centered">
         Lees de uitgelichte case om meer te weten te komen over onze manier van werken.<br><br>
            <?php include('modules/cases-preview.php'); ?>
         </div>
         <div class="section">
-            <?php include('modules/nl/get-in-touch.php'); ?>
+            <?php include('modules/get-in-touch.php'); ?>
         </div>
         <div class="section">
             <?php
                 $testimonial_id = 85;
+                $testimontials_id = 50;
             ?>
             <div class="testimonial-home">
                 <div class="testimonial-home__container">
@@ -51,13 +52,12 @@
                     </div>
                     <?php echo get_testimonial($testimonial_id, true); ?>
                 </div>
-                <div class="testimonial-home__more">
+                <a
+                    href="<?php echo get_the_permalink($testimontials_id); ?>"
+                    class="testimonial-home__more">
                     Toon meer testimonials<br>
-                    <a
-                        class="arrow-link arrow-link--small"
-                        href="<?php echo get_template_directory_uri(); ?>">
-                    </a>
-                </div>
+                    <div class="arrow-link arrow-link--small"></div>
+                </a>
             </div>
         </div>
     </div>
@@ -78,7 +78,7 @@
            <?php include('modules/infographics-preview.php'); ?>
         </div>
         <div class="section">
-            <?php include('modules/nl/follow-twitter.php'); ?>
+            <?php include('modules/follow-twitter.php'); ?>
         </div>
     </div>
 </div>

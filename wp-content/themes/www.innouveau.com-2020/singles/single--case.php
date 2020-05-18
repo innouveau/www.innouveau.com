@@ -13,12 +13,15 @@
         <div
             style="background-image: url(<?php echo $images[0]; ?>)"
             class="case__header-main">
-            <h1>
-                <?php echo $title; ?>
-            </h1>
-            <h2>
-                <?php echo $subtitle; ?>
-            </h2>
+            <div class="case__header-text">
+                <h1>
+                    <?php echo $title; ?>
+                </h1>
+                <h2>
+                    <?php echo $subtitle; ?>
+                </h2>
+            </div>
+           <?php include('image-payoff.php'); ?>
         </div>
         <div class="case__client-container">
            <?php echo get_client($page_id); ?>
@@ -43,6 +46,10 @@
 
     <div class="case__testimonial">
          <?php echo get_testimonial($testimonial_id, false); ?>
+    </div>
+
+    <div class="section">
+        <?php include(dirname(__DIR__) . '/modules/get-in-touch.php'); ?>
     </div>
 </div>
 

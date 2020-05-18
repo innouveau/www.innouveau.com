@@ -90,6 +90,95 @@ a {
   width: 100%;
   height: 100%;
 }
+.cases {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 40px;
+}
+.cases.cases--home {
+  justify-content: center;
+}
+.case {
+  background: #fff;
+  box-shadow: 2px 2px 19px rgba(0, 0, 0, 0.3);
+  margin-bottom: 20px;
+  text-align: left;
+}
+.case .case__title {
+  font-family: 'Tinos', serif;
+  font-size: 24px;
+  line-height: 1;
+  padding: 12px 24px;
+  display: block;
+  text-decoration: none;
+}
+.case .case__image {
+  height: 300px;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+.case .case__video {
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+.case .case__about {
+  padding: 24px;
+  border-bottom: 1px solid #ddd;
+  display: block;
+  text-decoration: none;
+}
+.case .case__about .case__about-preview {
+  height: 70px;
+  overflow: hidden;
+  position: relative;
+}
+.case .case__about .case__about-preview:after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 30px;
+  content: '';
+  z-index: 1;
+  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff);
+}
+.case .case__about p .case__read-more {
+  color: #DE7070;
+}
+.case .case__about p:first-child {
+  margin-top: 0;
+}
+.case .case__about p:last-child {
+  margin-bottom: 0;
+}
+.case.case--size-1 {
+  width: 360px;
+  margin: 20px;
+}
+.case.case--size-1 .case__title {
+  height: 80px;
+  padding: 16px;
+}
+.case.case--size-1 .case__about {
+  height: 190px;
+}
+.case.case--size-1 .case__client .case__avator {
+  width: 48px;
+  height: 48px;
+  margin-right: 16px;
+}
+.case.case--size-1 .case__client .case__client-description {
+  width: calc(100% - 64px);
+}
+.case.case--size-1 .case__client .case__client-description .case__client-name {
+  font-size: 15px;
+  font-weight: 400;
+}
+.case.case--size-2 {
+  width: calc(50% - 20px);
+  margin: 10px;
+}
 .case__client {
   font-family: 'Roboto Condensed', serif;
   font-size: 13px;
@@ -144,57 +233,9 @@ a {
 .arrow-link:after {
   content: '→';
 }
-.arrow-link:hover {
+a:hover .arrow-link {
   color: #DE7070;
   transform: scale(1.3);
-}
-.single--case .case__header {
-  margin: 0 -100px 40px -100px;
-  width: calc(100% + 200px);
-}
-.single--case .case__header .case__header-main {
-  text-align: center;
-  max-width: 100%;
-  color: #fff;
-  background-size: cover;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  height: 500px;
-  background-color: #000;
-  padding: 20px;
-}
-.single--case .case__header .case__header-main h1 {
-  font-weight: 400;
-  font-size: 50px;
-  line-height: 1;
-  margin: 0 0 10px 0;
-  font-family: 'Tinos', serif;
-}
-.single--case .case__header .case__header-main h2 {
-  font-family: 'Tinos', serif;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 1.2;
-  margin: 0;
-}
-.single--case .case__header .case__client-container {
-  background: #fff;
-}
-.single--case .case__intro {
-  font-family: 'Tinos', serif;
-  font-size: 20px;
-  margin-bottom: 40px;
-}
-.single--case .case__video {
-  background: #ddd;
-  margin-bottom: 40px;
-  position: relative;
-}
-.single--case .case__testimonial {
-  margin-top: 60px;
-}
-.single--case .case__testimonial .testimonial {
-  width: 100%;
 }
 .tiles {
   display: flex;
@@ -362,6 +403,9 @@ a {
   font-size: 16px;
   padding: 10px 0;
 }
+.get-in-touch {
+  text-decoration: none;
+}
 .follow-twitter {
   text-align: center;
 }
@@ -432,24 +476,6 @@ body.home .header__page-title {
   left: 12px;
   top: 12px;
 }
-.innouveau-logo .innouveau-logo__icon {
-  display: flex;
-}
-.innouveau-logo .innouveau-logo__icon .yellow-square {
-  width: 25px;
-  height: 25px;
-  vertical-align: top;
-  margin: 1px 5px 4px 14px;
-  background: #FFD400;
-  display: inline-block;
-}
-.innouveau-logo .innouveau-logo__icon .red-circle {
-  width: 27px;
-  height: 27px;
-  border-radius: 50%;
-  background: #DE7070;
-  display: inline-block;
-}
 .innouveau-logo h3 {
   margin: 0 0 3px 0;
   color: #000;
@@ -472,6 +498,24 @@ body.home .header__page-title {
   opacity: 1;
   transition: all 0.3s ease;
 }
+.innouveau-logo__icon {
+  display: flex;
+}
+.innouveau-logo__icon .yellow-square {
+  width: 25px;
+  height: 25px;
+  vertical-align: top;
+  margin: 1px 5px 4px 14px;
+  background: #FFD400;
+  display: inline-block;
+}
+.innouveau-logo__icon .red-circle {
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  background: #DE7070;
+  display: inline-block;
+}
 .testimonial {
   width: 500px;
 }
@@ -480,6 +524,7 @@ body.home .header__page-title {
   padding: 24px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   margin-bottom: 20px;
+  border-left: 2px solid #DE7070;
 }
 .testimonial .testimonial__main .testimonial__client {
   font-family: 'Roboto Condensed', serif;
@@ -507,10 +552,11 @@ body.home .header__page-title {
   line-height: 1.2;
 }
 .testimonial .testimonial__main .testimonial__quote {
-  font-size: 22px;
+  font-size: 20px;
   line-height: 1.2;
   font-weight: 500;
   margin-bottom: 30px;
+  font-family: 'Tinos', serif;
 }
 .testimonial .testimonial__main .testimonial__quote p:first-child {
   margin-top: 0;
@@ -537,6 +583,7 @@ body.home .header__page-title {
   font-weight: 700;
 }
 .testimonial-home .testimonial-home__more {
+  text-decoration: none;
   width: 100px;
   text-align: center;
   line-height: 1.2;
@@ -555,62 +602,19 @@ body.home .header__page-title {
   font-family: 'Roboto condensed', sans-serif;
   font-weight: 300;
 }
-.cases {
+.cases-preview {
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
 }
-.cases .case__container {
+.cases-preview .case__container {
   width: 500px;
   max-width: 100%;
   margin-right: 20px;
 }
-.cases .case__container .case {
-  background: #fff;
-  box-shadow: 2px 2px 19px rgba(0, 0, 0, 0.3);
-  margin-bottom: 20px;
-}
-.cases .case__container .case .case__title {
-  font-family: 'Tinos', serif;
-  font-size: 24px;
-  padding: 12px 24px;
-}
-.cases .case__container .case .case__image {
-  height: 300px;
-  background-size: cover;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-}
-.cases .case__container .case .case__about {
-  padding: 24px;
-  border-bottom: 1px solid #ddd;
-}
-.cases .case__container .case .case__about .case__about-preview {
-  height: 70px;
-  overflow: hidden;
-  position: relative;
-}
-.cases .case__container .case .case__about .case__about-preview:after {
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 30px;
-  content: '';
-  z-index: 1;
-  background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff);
-}
-.cases .case__container .case .case__about p .case__read-more {
-  color: #DE7070;
-}
-.cases .case__container .case .case__about p:first-child {
-  margin-top: 0;
-}
-.cases .case__container .case .case__about p:last-child {
-  margin-bottom: 0;
-}
-.cases .case__more {
+.cases-preview .case__more {
+  text-decoration: none;
   position: absolute;
   right: 40px;
   top: 50%;
@@ -620,7 +624,7 @@ body.home .header__page-title {
   line-height: 1.2;
   color: #888;
 }
-.cases .case__more .arrow-link {
+.cases-preview .case__more .arrow-link {
   margin: 8px 0 0 0;
 }
 .languages {
@@ -676,7 +680,6 @@ body.home .header__page-title {
 }
 .menu ul > li:hover a {
   background: #fff;
-  padding: 60px 20px;
 }
 .menu .menu__close {
   position: absolute;
@@ -754,4 +757,91 @@ body.home .header__page-title {
 }
 .page-template-template--contact .footer .footer__container .footer__row .footer__col {
   font-size: 14px;
+}
+.single--case .case__header {
+  margin: 0 -100px 40px -100px;
+  width: calc(100% + 200px);
+}
+.single--case .case__header .case__header-main {
+  text-align: center;
+  max-width: 100%;
+  color: #fff;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  height: 500px;
+  background-color: #000;
+  padding: 20px;
+  position: relative;
+}
+.single--case .case__header .case__header-main .image-payoff {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+}
+.single--case .case__header .case__header-main .case__header-text {
+  max-width: 700px;
+  margin: 0 auto;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+.single--case .case__header .case__header-main .case__header-text h1 {
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 1;
+  margin: 0 0 10px 0;
+  font-family: 'Tinos', serif;
+}
+.single--case .case__header .case__header-main .case__header-text h2 {
+  font-family: 'Tinos', serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.2;
+  margin: 0;
+}
+.single--case .case__header .case__client-container {
+  background: #fff;
+}
+.single--case .case__intro {
+  font-family: 'Tinos', serif;
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+.single--case .case__video {
+  background: #ddd;
+  margin-bottom: 40px;
+  position: relative;
+}
+.single--case .case__testimonial {
+  margin-top: 60px;
+}
+.single--case .case__testimonial .testimonial {
+  width: 100%;
+}
+@media only screen and (max-width: 1280px) {
+  .single--case .case__header {
+    margin: 0 -50px 40px -50px;
+    width: calc(100% + 100px);
+  }
+}
+.image-payoff {
+  display: flex;
+  align-items: center;
+}
+.image-payoff .innouveau-logo__icon {
+  margin-right: 5px;
+}
+.image-payoff .innouveau-logo__icon .yellow-square {
+  width: 12.5px;
+  height: 12.5px;
+  margin: 0.5px 2.5px 2px 7px;
+}
+.image-payoff .innouveau-logo__icon .red-circle {
+  width: 13.5px;
+  height: 13.5px;
+}
+.image-payoff .image-payoff__text {
+  font-size: 9.5px;
+  color: #fff;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  margin-bottom: 2px;
 }

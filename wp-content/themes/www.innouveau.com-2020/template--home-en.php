@@ -40,11 +40,12 @@
            <?php include('modules/cases-preview.php'); ?>
         </div>
         <div class="section">
-            <?php include('modules/en/get-in-touch.php'); ?>
+            <?php include('modules/get-in-touch.php'); ?>
         </div>
         <div class="section">
             <?php
                 $testimonial_id = 97;
+                $testimontials_id = 73;
             ?>
             <div class="testimonial-home">
                 <div class="testimonial-home__container">
@@ -53,13 +54,12 @@
                     </div>
                     <?php get_testimonial($testimonial_id, true); ?>
                 </div>
-                <div class="testimonial-home__more">
+                <a
+                    href="<?php echo get_the_permalink($testimontials_id); ?>"
+                    class="testimonial-home__more">
                     Show more testimonials<br>
-                    <a
-                        class="arrow-link arrow-link--small"
-                        href="<?php echo get_template_directory_uri(); ?>">
-                    </a>
-                </div>
+                    <div class="arrow-link arrow-link--small"></div>
+                </a>
             </div>
         </div>
     </div>
@@ -80,7 +80,7 @@
            <?php include('modules/infographics-preview.php'); ?>
         </div>
         <div class="section">
-            <?php include('modules/en/follow-twitter.php'); ?>
+            <?php include('modules/follow-twitter.php'); ?>
         </div>
     </div>
 </div>
