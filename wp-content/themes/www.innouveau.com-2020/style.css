@@ -78,6 +78,13 @@ a {
   margin-bottom: 4px;
   background: #000;
 }
+.content figure {
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+.content figure.figure--visited {
+  opacity: 1;
+}
 .video {
   padding-bottom: 56.25%;
   height: 0;

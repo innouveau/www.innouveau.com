@@ -2,6 +2,7 @@ $(window).ready(function(){
     initMenu();
     initHeader();
     initYoutubeAPI();
+    initImageFadeIn();
 });
 
 function initYoutubeAPI() {
@@ -13,8 +14,51 @@ function initYoutubeAPI() {
 }
 
 function onYouTubeIframeAPIReady() {
-    console.log('youtube api ready');
     $('.video').each(function() {
         new Video(this);
     })
+}
+
+function initImageFadeIn() {
+    let images, imagesData, windowHeight, margin;
+    margin = 300;
+    imagesData = [];
+    windowHeight = $(window).outerHeight();
+    images = $('.content figure');
+    images.each(function() {
+        let image, top, bottom;
+        image = $(this);
+        top = image.offset().top;
+        bottom = top + image.outerHeight();
+        imagesData.push({
+            image,
+            top,
+            bottom
+        })
+    });
+
+    const onScroll = function() {
+        let scroll, remove;
+        remove = [];
+        scroll = $(window).scrollTop();
+        for (let d of imagesData) {
+            if (scroll > (d.top - windowHeight + margin)) {
+                d.image.addClass('figure--visited');
+                remove.push(d);
+            }
+        }
+        for (let i = imagesData.length - 1; i >= 0; i--) {
+            let d = imagesData[i];
+            if (remove.indexOf(d) > -1) {
+                imagesData.splice(i, 1);
+            }
+        }
+
+        if (imagesData.length === 0) {
+            $(window).off("scroll", onScroll);
+        }
+    };
+
+
+    $(window).scroll(onScroll);
 }

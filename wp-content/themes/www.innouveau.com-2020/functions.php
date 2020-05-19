@@ -1,6 +1,6 @@
 <?php 
 
-//$url = '';
+//$url = 'http://localhost/innouveau/www.innouveau.com-2020/dev/';
 //update_option('siteurl', $url );
 //update_option('home', $url );
 
