@@ -39,9 +39,6 @@
                             <td>NL854214902B01</td>
                         </tr>
                     </table>
-
-                    <br><br>
-                    <?php include('php/terms.php'); ?>
                 </div>
 
                 <div class="footer__col">

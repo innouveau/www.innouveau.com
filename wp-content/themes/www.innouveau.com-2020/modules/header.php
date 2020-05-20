@@ -1,22 +1,3 @@
-<script>
-    function initHeader() {
-        $(window).scroll(function (event) {
-            let scroll = $(window).scrollTop();
-            if (scroll > 80) {
-                $('.header').addClass('header--small');
-            } else {
-                $('.header').removeClass('header--small');
-            }
-
-            if (scroll > 150) {
-                $('.header').addClass('header--small--delay');
-            } else {
-                $('.header').removeClass('header--small--delay');
-            }
-        });
-    }
-</script>
-
 <div class="header">
     <div class="identity">
         <a href="<?php echo get_bloginfo('home'); ?>">

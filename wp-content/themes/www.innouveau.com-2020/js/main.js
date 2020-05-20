@@ -1,9 +1,31 @@
 $(window).ready(function(){
     initMenu();
-    initHeader();
+    initScroll();
     initYoutubeAPI();
     initImageFadeIn();
 });
+
+function initScroll() {
+    $(window).scroll(function (event) {
+        let scroll = $(window).scrollTop();
+
+        if (scroll > 80) {
+            $('.header').addClass('header--small');
+        } else {
+            $('.header').removeClass('header--small');
+        }
+
+        if (scroll > 150) {
+            $('.header').addClass('header--small--delay');
+        } else {
+            $('.header').removeClass('header--small--delay');
+        }
+
+        if (scroll > 600) {
+            $('.next-case').addClass('next-case--visible');
+        }
+    });
+}
 
 function initYoutubeAPI() {
     let firstScriptTag,
@@ -12,6 +34,7 @@ function initYoutubeAPI() {
     firstScriptTag = document.getElementsByTagName('script')[0];
     firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 }
+
 
 function onYouTubeIframeAPIReady() {
     $('.video').each(function() {

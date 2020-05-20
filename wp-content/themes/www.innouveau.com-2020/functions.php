@@ -74,18 +74,23 @@ function get_case($case_id, $size) {
             </div>
             <a
                 href="<?php echo $permalink; ?>"
-                class="case__about">
-                <div class="case__about-preview">
-                    <?php echo $intro; ?>
+                class="case__main">
+                <div class="case__about">
+                    <div class="case__about-preview">
+                        <?php echo $intro; ?>
+                    </div>
+                    <p>
+                        Read more about this case:
+                        <span class="case__read-more" href="<?php echo $permalink; ?>">
+                             <?php echo $title; ?>
+                        </span>
+                    </p>
                 </div>
-                <p>
-                    Read more about this case:
-                    <span class="case__read-more" href="<?php echo $permalink; ?>">
-                         <?php echo $title; ?>
-                    </span>
-                </p>
+                <?php get_client($case_id); ?>
+
+
             </a>
-            <?php get_client($case_id); ?>
+
         </div>
     <?php
 }

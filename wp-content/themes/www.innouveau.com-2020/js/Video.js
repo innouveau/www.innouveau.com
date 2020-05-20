@@ -21,12 +21,11 @@ class Video {
     }
 
     load() {
-        const onPlayerReady = function(event) {
-            //event.target.mute();
+        const onPlayerReady = (event) => {
             event.target.playVideo();
         };
 
-        const onPlayerStateChange = function(event) {
+        const onPlayerStateChange = (event) => {
             // playing
             if (event.data === 1) {
                 this.status.loaded = true;

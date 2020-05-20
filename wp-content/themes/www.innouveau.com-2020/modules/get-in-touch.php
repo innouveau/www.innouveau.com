@@ -1,6 +1,6 @@
 <?php
     $language = pll_current_language();
-    if (language == 'en') {
+    if ($language == 'en') {
         $page_id = 69;
         $permalink = get_the_permalink($page_id);
 ?>

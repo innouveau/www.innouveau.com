@@ -129,18 +129,20 @@ a {
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
 }
-.case .case__about {
+.case .case__main {
+  text-decoration: none;
+}
+.case .case__main .case__about {
   padding: 24px;
   border-bottom: 1px solid #ddd;
   display: block;
-  text-decoration: none;
 }
-.case .case__about .case__about-preview {
+.case .case__main .case__about .case__about-preview {
   height: 70px;
   overflow: hidden;
   position: relative;
 }
-.case .case__about .case__about-preview:after {
+.case .case__main .case__about .case__about-preview:after {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -150,13 +152,13 @@ a {
   z-index: 1;
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff);
 }
-.case .case__about p .case__read-more {
+.case .case__main .case__about p .case__read-more {
   color: #DE7070;
 }
-.case .case__about p:first-child {
+.case .case__main .case__about p:first-child {
   margin-top: 0;
 }
-.case .case__about p:last-child {
+.case .case__main .case__about p:last-child {
   margin-bottom: 0;
 }
 .case.case--size-1 {
@@ -715,6 +717,51 @@ body.home .header__page-title {
 }
 .menu.menu--active {
   right: 0;
+}
+.next-case {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  text-decoration: none;
+  opacity: 0;
+  transition: all 1s ease;
+  pointer-events: none;
+}
+.next-case .next-case__tool {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  font-size: 13px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  background: #fff;
+  border-radius: 50%;
+}
+.next-case .next-case__label {
+  position: absolute;
+  right: 0;
+  top: -23px;
+  transform: translateY(-50%);
+  white-space: nowrap;
+  line-height: 1.3;
+  font-size: 10px;
+  text-align: right;
+}
+.next-case .next-case__label .next-case__label-case-title {
+  font-family: 'Tinos', serif;
+  font-size: 13px;
+}
+.next-case:hover .next-case__tool {
+  background: #FFD400;
+}
+.next-case.next-case--visible {
+  opacity: 1;
+  pointer-events: all;
 }
 .section--worked-for {
   background: #D9D9D9;
