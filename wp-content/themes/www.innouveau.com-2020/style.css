@@ -30,6 +30,46 @@ html.html body {
     margin: 0;
   }
 }
+.page__header {
+  margin: 0 -80px 40px -80px;
+  width: calc(100% + 160px);
+}
+.page__header .page__header-main {
+  text-align: center;
+  max-width: 100%;
+  color: #fff;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  height: 500px;
+  background-color: #000;
+  padding: 20px;
+  position: relative;
+}
+.page__header .page__header-main .image-payoff {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+}
+.page__header .page__header-main .page__header-text {
+  max-width: 700px;
+  margin: 0 auto;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+.page__header .page__header-main .page__header-text h1 {
+  font-weight: 400;
+  font-size: 50px;
+  line-height: 1;
+  margin: 0 0 10px 0;
+  font-family: 'Tinos', serif;
+}
+.page__header .page__header-main .page__header-text h2 {
+  font-family: 'Tinos', serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.2;
+  margin: 0;
+}
 body {
   font-family: 'Dosis', sans-serif;
   margin: 0;
@@ -51,6 +91,13 @@ a {
 .section {
   padding: 60px 0;
   border-bottom: 1px solid #ddd;
+}
+.section h1 {
+  text-align: center;
+  font-family: 'Tinos', serif;
+  font-weight: 400;
+  font-size: 42px;
+  margin-bottom: 60px;
 }
 .section .intro {
   font-size: 24px;
@@ -577,6 +624,10 @@ body.home .header__page-title {
 .testimonial .testimonial__footer a {
   color: #DE7070;
 }
+.testimonial__container {
+  display: flex;
+  justify-content: center;
+}
 .testimonial-home {
   display: flex;
   align-items: center;
@@ -812,47 +863,21 @@ body.home .header__page-title {
 .page-template-template--contact .footer .footer__container .footer__row .footer__col {
   font-size: 14px;
 }
-.single--case .case__header {
-  margin: 0 -100px 40px -100px;
-  width: calc(100% + 200px);
+.template--pillar .page__header {
+  margin: 0 0 40px 0;
+  width: 100%;
 }
-.single--case .case__header .case__header-main {
+.template--pillar .page__header .page__header-main {
+  border: 2px solid #000;
+  border-top: 0;
+  height: 400px;
+}
+.template--pillar h1 {
   text-align: center;
-  max-width: 100%;
-  color: #fff;
-  background-size: cover;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  height: 500px;
-  background-color: #000;
-  padding: 20px;
-  position: relative;
-}
-.single--case .case__header .case__header-main .image-payoff {
-  position: absolute;
-  right: 12px;
-  bottom: 12px;
-}
-.single--case .case__header .case__header-main .case__header-text {
-  max-width: 700px;
-  margin: 0 auto;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-}
-.single--case .case__header .case__header-main .case__header-text h1 {
+  font-family: 'Tinos', serif;
   font-weight: 400;
-  font-size: 50px;
-  line-height: 1;
-  margin: 0 0 10px 0;
-  font-family: 'Tinos', serif;
 }
-.single--case .case__header .case__header-main .case__header-text h2 {
-  font-family: 'Tinos', serif;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 1.2;
-  margin: 0;
-}
-.single--case .case__header .case__client-container {
+.single--case .page__header .case__client-container {
   background: #fff;
 }
 .single--case .case__intro {
@@ -872,7 +897,7 @@ body.home .header__page-title {
   width: 100%;
 }
 @media only screen and (max-width: 1280px) {
-  .single--case .case__header {
+  .single--case .page__header {
     margin: 0 -50px 40px -50px;
     width: calc(100% + 100px);
   }

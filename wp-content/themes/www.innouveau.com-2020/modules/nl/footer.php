@@ -36,7 +36,7 @@
                             <td>BTW</td>
                             <td>NL854214902B01</td>
                         </tr>
-                    </table> 
+                    </table>
                 </div>
 
                 <div class="footer__col">

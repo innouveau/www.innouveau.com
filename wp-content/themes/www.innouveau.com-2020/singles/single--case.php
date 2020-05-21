@@ -9,11 +9,11 @@
 ?>
 <div class="single--case">
 
-    <div class="case__header">
+    <div class="page__header">
         <div
             style="background-image: url(<?php echo $images[0]; ?>)"
-            class="case__header-main">
-            <div class="case__header-text">
+            class="page__header-main">
+            <div class="page__header-text">
                 <h1>
                     <?php echo $title; ?>
                 </h1>
