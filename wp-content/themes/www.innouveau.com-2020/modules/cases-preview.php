@@ -1,6 +1,10 @@
 <?php
-    $highlighted_case_id = 12;
-    $cases_id = 54;
+    $language = pll_current_language();
+    if ($language == 'en') {
+        $highlighted_case_id = 344;
+    } else {
+        $highlighted_case_id = 12;
+    }
 ?>
 
 <div class="cases-preview">

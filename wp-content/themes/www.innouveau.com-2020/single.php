@@ -5,7 +5,7 @@
     <div class="pagewrap">
          <?php
             if(have_posts()): while(have_posts()) : the_post();
-                if (has_category('case')) {
+                if (has_category('case') || has_category('case-en')) {
                     include('singles/single--case.php');
                 }
             endwhile; endif;

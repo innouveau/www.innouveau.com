@@ -2,6 +2,8 @@
     $language = pll_current_language();
     if ($language == 'en') {
         $infographic_id = 223;
+        $infographic_case_1 = 309;
+        $infographic_case_2 = 305;
         $permalink = get_the_permalink($infographic_id);
 ?>
     <p>
@@ -12,6 +14,8 @@
 <?php
     } else {
         $infographic_id = 220;
+        $infographic_case_1 = 192;
+        $infographic_case_2 = 198;
         $permalink = get_the_permalink($infographic_id);
 ?>
     <p>
@@ -26,7 +30,7 @@
 
 <p>
     <div class="cases cases--home">
-        <?php get_case(192, 1); ?>
-        <?php get_case(198, 1); ?>
+        <?php get_case($infographic_case_1, 1); ?>
+        <?php get_case($infographic_case_2, 1); ?>
     </div>
 </p>
