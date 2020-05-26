@@ -131,6 +131,16 @@ a {
   margin-bottom: 4px;
   background: #000;
 }
+figure {
+  margin-top: 40px;
+  margin-bottom: 60px!important;
+}
+figure figcaption {
+  text-align: center;
+  font-style: italic;
+  font-family: 'Tinos', serif;
+  color: #888;
+}
 .content figure {
   opacity: 0;
   transition: opacity 1s ease;
@@ -895,6 +905,13 @@ body.home .header__page-title {
   background: #ddd;
   margin-bottom: 40px;
   position: relative;
+}
+.single--case .case__body p {
+  font-size: 20px;
+  width: 600px;
+  max-width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 .single--case .case__testimonial {
   margin-top: 60px;
