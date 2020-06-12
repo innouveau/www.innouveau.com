@@ -19,6 +19,43 @@ function testimonial_shortcode($atts) {
 add_shortcode( 'testimonial', 'testimonial_shortcode' );
 
 
+
+function get_employee($employee_id) {
+    $images = wp_get_attachment_image_src( get_post_thumbnail_id( $employee_id ), 'full' );
+    $name = get_the_title($employee_id);
+    $email = get_field('email', $employee_id);
+    $linkedin = get_field('linkedin', $employee_id);
+    $telephone = get_field('telephone', $employee_id);
+
+
+    $html = '
+        <div class="employee">
+            <div
+                style="background-image: url(' . $images[0] . ')"
+                class="employee__image"></div>
+            <div class="employee__text">
+                <div class="employee__name">
+                    ' . $name . '
+                </div>
+                <div class="employee__email">
+                    <a href="mailto:' . $email . '" target="_blank">
+                        ' . $email . '
+                    </a>
+                </div>
+                <div class="employee__telephone">
+                    ' . $telephone . '
+                </div>
+                <div class="employee__email">
+                    <a href="' . $linkedin . '" target="_blank">
+                        LinkedIn
+                    </a>
+                </div>
+            </div>
+        </div>
+    ';
+    return $html;
+}
+
 function get_testimonial($testimonial_id, $with_permalink) {
     $testimonial = get_post($testimonial_id);
     $testimonial_quote = $testimonial->post_content;

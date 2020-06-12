@@ -2,7 +2,7 @@
     $title = get_the_title();
     $subtitle = get_field('subtitle');
     $intro = get_field('intro');
-    $testimonial_id = get_field('testimonial');
+    $employee_id = get_field('employee');
     $video_id = get_field('video');
     $team = get_field('team');
     $site = get_field('site');
