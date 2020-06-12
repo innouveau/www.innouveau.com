@@ -44,7 +44,7 @@ function onYouTubeIframeAPIReady() {
 
 function initImageFadeIn() {
     let images, imagesData, windowHeight, margin;
-    margin = 300;
+    margin = 200;
     imagesData = [];
     windowHeight = $(window).outerHeight();
     images = $('.content figure');

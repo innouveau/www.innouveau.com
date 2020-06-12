@@ -33,6 +33,30 @@ html.html body {
 .page__header {
   margin: 0 -80px 40px -80px;
   width: calc(100% + 160px);
+  background: #fff;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+.page__header .page__header-text {
+  padding: 12px 48px 24px 48px;
+  text-align: center;
+  width: 600px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.page__header .page__header-text h1 {
+  font-weight: 400;
+  font-size: 40px;
+  line-height: 1;
+  margin: 0 0 10px 0;
+  font-family: 'Tinos', serif;
+}
+.page__header .page__header-text h2 {
+  font-family: 'Tinos', serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 1.1;
+  margin: 0;
+  color: #DE7070;
 }
 .page__header .page__header-main {
   text-align: center;
@@ -41,34 +65,16 @@ html.html body {
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
-  height: 500px;
+  height: 400px;
   background-color: #000;
-  padding: 20px;
   position: relative;
+  border-top: 1px solid #aaa;
+  border-bottom: 1px solid #aaa;
 }
 .page__header .page__header-main .image-payoff {
   position: absolute;
   right: 12px;
   bottom: 12px;
-}
-.page__header .page__header-main .page__header-text {
-  max-width: 700px;
-  margin: 0 auto;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-}
-.page__header .page__header-main .page__header-text h1 {
-  font-weight: 400;
-  font-size: 50px;
-  line-height: 1;
-  margin: 0 0 10px 0;
-  font-family: 'Tinos', serif;
-}
-.page__header .page__header-main .page__header-text h2 {
-  font-family: 'Tinos', serif;
-  font-weight: 700;
-  font-size: 24px;
-  line-height: 1.2;
-  margin: 0;
 }
 body {
   font-family: 'Dosis', sans-serif;
@@ -134,6 +140,10 @@ a {
 figure {
   margin-top: 40px;
   margin-bottom: 60px!important;
+}
+figure img {
+  margin: 0 auto;
+  display: block;
 }
 figure figcaption {
   text-align: center;
@@ -261,7 +271,7 @@ figure figcaption {
 .case__client .case__avator {
   width: 64px;
   height: 64px;
-  background-size: cover;
+  background-size: contain;
   background-position: 50% 50%;
   background-repeat: no-repeat;
   margin-right: 12px;
@@ -509,9 +519,10 @@ a:hover .arrow-link {
 .header .identity .identity__slogan {
   position: absolute;
   left: 96px;
-  top: 14px;
+  top: 16px;
   opacity: 0;
   transition: all 0.2s ease;
+  font-size: 13px;
 }
 .header .header__page-title {
   position: absolute;
@@ -794,9 +805,8 @@ body.home .header__page-title {
   height: 32px;
   cursor: pointer;
   text-decoration: none;
-  opacity: 0;
+  opacity: 0.5;
   transition: all 1s ease;
-  pointer-events: none;
 }
 .next-case .next-case__tool {
   display: flex;
@@ -898,13 +908,40 @@ body.home .header__page-title {
 }
 .single--case .case__intro {
   font-family: 'Tinos', serif;
-  font-size: 20px;
-  margin-bottom: 40px;
+  font-size: 24px;
+  margin-bottom: 80px;
+}
+.single--case .case__team {
+  margin-bottom: 20px;
+  border-left: 2px solid #000;
+  padding: 12px 24px;
+  font-family: 'Tinos', serif;
+  background: #fff;
+}
+.single--case .case__site {
+  margin-bottom: 20px;
+}
+.single--case .case__site a {
+  background: #FFD400;
+  padding: 10px;
+  color: #000;
+  display: block;
+  text-decoration: none;
 }
 .single--case .case__video {
   background: #ddd;
+  margin-top: 60px;
   margin-bottom: 40px;
   position: relative;
+}
+.single--case .case__body h3 {
+  font-family: 'Tinos', serif;
+  font-weight: 700;
+  text-align: center;
+  font-size: 25px;
+  width: 440px;
+  margin: 40px auto 20px auto;
+  line-height: 1.2;
 }
 .single--case .case__body p {
   font-size: 20px;
@@ -912,6 +949,11 @@ body.home .header__page-title {
   max-width: 100%;
   margin-left: auto;
   margin-right: auto;
+}
+.single--case .case__body .case__frame {
+  background: #fff;
+  padding: 20px;
+  margin: 60px 0;
 }
 .single--case .case__testimonial {
   margin-top: 60px;
