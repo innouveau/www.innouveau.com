@@ -6,6 +6,7 @@
     $video_id = get_field('video');
     $team = get_field('team');
     $site = get_field('site');
+    $get_in_touch_text = get_field('get_in_touch_text');
     $page_id = get_the_ID();
     $images = wp_get_attachment_image_src( get_post_thumbnail_id( $page_id ), 'full' );
 ?>
@@ -56,17 +57,8 @@
 
 
     <div class="case__body">
-       <?php echo get_the_content(); ?>
+       <?php the_content(); ?>
     </div>
-
-    <?php
-        if ($testimonial_id) {
-            echo '<div class="case__testimonial">';
-            echo get_testimonial($testimonial_id, false);
-            echo '</div>';
-        }
-    ?>
-
 
     <div class="section">
         <?php include(dirname(__DIR__) . '/modules/get-in-touch.php'); ?>

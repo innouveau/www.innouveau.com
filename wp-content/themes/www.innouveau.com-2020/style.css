@@ -487,6 +487,9 @@ a:hover .arrow-link {
 }
 .get-in-touch {
   text-decoration: none;
+  width: 500px;
+  max-width: 100%;
+  margin: 0 auto;
 }
 .follow-twitter {
   text-align: center;
@@ -956,7 +959,7 @@ body.home .header__page-title {
   margin: 60px 0;
 }
 .single--case .case__testimonial {
-  margin-top: 60px;
+  margin: 60px 0;
 }
 .single--case .case__testimonial .testimonial {
   width: 100%;

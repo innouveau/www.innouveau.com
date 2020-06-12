@@ -7,6 +7,16 @@
 
 register_nav_menu('main', 'The main menu');
 add_theme_support('post-thumbnails');
+add_filter('widget_text','do_shortcode');
+add_filter('the_content','do_shortcode');
+
+function testimonial_shortcode($atts) {
+    $testimonial_id = shortcode_atts;
+    //return '';
+    return '<div class="case__testimonial">' . get_testimonial($atts['id'], false) . '</div>';
+}
+
+add_shortcode( 'testimonial', 'testimonial_shortcode' );
 
 
 function get_testimonial($testimonial_id, $with_permalink) {
@@ -18,42 +28,38 @@ function get_testimonial($testimonial_id, $with_permalink) {
     $case_id = get_field('case', $testimonial_id);
     $case_title = get_the_title($case_id);
     $case_permalink = get_the_permalink($case_id);
-
-    ?>
+    $html = '
         <div class="testimonial">
             <div class="testimonial__main">
                 <div class="testimonial__quote">
-                    <?php echo $testimonial_quote; ?>
+                    ' . $testimonial_quote . '
                 </div>
                 <div class="testimonial__client">
                     <div
-                        style="background-image: url(<?php echo $images[0]; ?>)"
+                        style="background-image: url(' . $images[0] . ')"
                         class="testimonial__avator">
                     </div>
                     <div class="testimonial__client-description">
                         <div class="testimonial__client-name">
-                            <?php echo $testimonial_client; ?>
+                            ' . $testimonial_client . '
                         </div>
                         <div class="testimonial__client-position">
-                            <?php echo $client_position; ?>
+                            ' . $client_position . '
                         </div>
                     </div>
                 </div>
-            </div>
-    <?php
+            </div>';
         if ($with_permalink) {
-    ?>
-            <div class="testimonial__footer">
+            $html .=
+            '<div class="testimonial__footer">
             Read more about this case:
                 <a href="<?php echo $case_permalink; ?>">
-                     <?php echo $case_title; ?>
+                     ' . $case_title . '
                 </a>
-            </div>
-    <?php
+            </div>';
         }
-    ?>
-        </div>
-    <?php
+        $html .= '</div>';
+    return $html;
 }
 
 function get_case($case_id, $size) {
