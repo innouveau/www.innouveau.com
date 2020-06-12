@@ -51,6 +51,12 @@ function get_employee($employee_id) {
                     </a>
                 </div>
             </div>
+            <div class="employee__identity">
+                <div class="innouveau-logo__icon">
+                    <div class="yellow-square"></div>
+                    <div class="red-circle"></div>
+                </div>
+            </div>
         </div>
     ';
     return $html;
