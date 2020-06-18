@@ -76,6 +76,15 @@ html.html body {
   right: 12px;
   bottom: 12px;
 }
+.page__intro {
+  margin: 40px auto;
+  font-size: 32px;
+  font-weight: 800;
+  text-align: center;
+  width: 500px;
+  max-width: 100%;
+  line-height: 1.1;
+}
 body {
   font-family: 'Dosis', sans-serif;
   margin: 0;
@@ -99,6 +108,12 @@ a {
   font-family: 'Tinos', serif;
   font-weight: 400;
   margin: 20px 0 60px 0;
+}
+.standard-page h3 {
+  text-align: center;
+  font-family: 'Tinos', serif;
+  margin: 40px 0 20px 0;
+  font-size: 24px;
 }
 .section {
   padding: 60px 0;
@@ -190,6 +205,16 @@ figure figcaption {
   width: 18px;
   height: 18px;
 }
+.employee-container {
+  display: flex;
+  justify-content: center;
+}
+.employee-container .employee {
+  margin-right: 16px;
+}
+.employee-container .employee:last-child {
+  margin-right: 0;
+}
 .content figure {
   opacity: 0;
   transition: opacity 1s ease;
@@ -272,6 +297,26 @@ figure figcaption {
 }
 .case .case__main .case__about p:last-child {
   margin-bottom: 0;
+}
+.case.case--size-0 {
+  width: 360px;
+  margin: 16px 0;
+}
+.case.case--size-0 .case__title {
+  height: 50px;
+  padding: 16px;
+}
+.case.case--size-0 .case__about {
+  height: auto;
+}
+.case.case--size-0 .case__about .case__about-preview {
+  display: none;
+}
+.case.case--size-0 .case__about p {
+  margin: 0;
+}
+.case.case--size-0 .case__client {
+  display: none;
 }
 .case.case--size-1 {
   width: 360px;
@@ -558,10 +603,16 @@ a:hover .arrow-link {
   z-index: 10;
   height: 104px;
   transition: all 0.2s ease;
+  pointer-events: none;
+}
+.header .languages,
+.header .hamburger {
+  pointer-events: all;
 }
 .header .identity {
   display: flex;
   align-items: center;
+  pointer-events: all;
 }
 .header .identity .identity__slogan {
   position: absolute;
@@ -585,6 +636,7 @@ a:hover .arrow-link {
   height: 54px;
   background: #f5f5f5;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  pointer-events: all;
 }
 .header.header--small .header__page-title {
   opacity: 1;
@@ -701,6 +753,33 @@ body.home .header__page-title {
 .testimonial__container {
   display: flex;
   justify-content: center;
+}
+.case__testimonial {
+  margin: 60px 0;
+}
+.case__testimonial .testimonial {
+  width: 100%;
+}
+.case__testimonial.testimonial--1 .testimonial {
+  width: 400px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+.case__testimonial.testimonial--1 .testimonial .testimonial__main {
+  padding: 20px;
+}
+.case__testimonial.testimonial--1 .testimonial .testimonial__main .testimonial__quote {
+  font-size: 14px;
+}
+.case__testimonial.testimonial--1 .testimonial .testimonial__main .testimonial__client {
+  font-size: 11px;
+}
+.case__testimonial.testimonial--1 .testimonial .testimonial__main .testimonial__client .testimonial__avator {
+  width: 48px;
+  height: 48px;
+}
+.case__testimonial.testimonial--1 .testimonial .testimonial__main .testimonial__client .testimonial__client-description .testimonial__client-name {
+  font-size: 16px;
 }
 .testimonial-home {
   display: flex;
@@ -930,6 +1009,17 @@ body.home .header__page-title {
   height: 300px;
   border: 0!important;
 }
+.page-template-template--contact .contact__employees {
+  display: flex;
+  margin-bottom: 40px;
+  justify-content: center;
+}
+.page-template-template--contact .contact__employees .employee {
+  margin-right: 20px;
+}
+.page-template-template--contact .contact__employees .employee:last-child {
+  margin-right: 0;
+}
 .page-template-template--contact .footer {
   margin-top: 0;
 }
@@ -1001,12 +1091,6 @@ body.home .header__page-title {
   background: #fff;
   padding: 20px;
   margin: 60px 0;
-}
-.single--case .case__testimonial {
-  margin: 60px 0;
-}
-.single--case .case__testimonial .testimonial {
-  width: 100%;
 }
 @media only screen and (max-width: 1280px) {
   .single--case .page__header {

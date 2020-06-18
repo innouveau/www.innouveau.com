@@ -12,11 +12,25 @@ add_filter('the_content','do_shortcode');
 
 function testimonial_shortcode($atts) {
     $testimonial_id = shortcode_atts;
-    //return '';
-    return '<div class="case__testimonial">' . get_testimonial($atts['id'], false) . '</div>';
+    return '<div class="case__testimonial testimonial--' . $atts['size'] . '">' . get_testimonial($atts['id'], false) . '</div>';
 }
 
+function employee_shortcode($atts) {
+    return '<div class="employee-container">' . get_employee($atts['id']) . '</div>';
+}
+
+function case_shortcode($atts) {
+    return '<div class="case-container">' . get_case($atts['id'], 0) . '</div>';
+}
+
+function employees_shortcode($atts) {
+    return '<div class="employee-container">' . get_employee(513) . ' ' . get_employee(528) . '</div>';
+}
+
+add_shortcode( 'case', 'case_shortcode' );
 add_shortcode( 'testimonial', 'testimonial_shortcode' );
+add_shortcode( 'employee', 'employee_shortcode' );
+add_shortcode( 'employees', 'employees_shortcode' );
 
 
 
@@ -26,8 +40,6 @@ function get_employee($employee_id) {
     $email = get_field('email', $employee_id);
     $linkedin = get_field('linkedin', $employee_id);
     $telephone = get_field('telephone', $employee_id);
-
-
     $html = '
         <div class="employee">
             <div
@@ -96,7 +108,7 @@ function get_testimonial($testimonial_id, $with_permalink) {
             $html .=
             '<div class="testimonial__footer">
             Read more about this case:
-                <a href="<?php echo $case_permalink; ?>">
+                <a href="' . $case_permalink . '">
                      ' . $case_title . '
                 </a>
             </div>';
@@ -112,37 +124,33 @@ function get_case($case_id, $size) {
         $permalink = get_the_permalink($case_id);
         $images = wp_get_attachment_image_src( get_post_thumbnail_id( $case_id ), 'full' );
         $video_id = get_field('video', $case_id);
-    ?>
-        <div class="case case--size-<?php echo $size; ?>">
+        return '
+        <div class="case case--size-' . $size . '">
             <a
-                href="<?php echo $permalink; ?>"
+                href="' . $permalink . '"
                 class="case__title">
-                <?php echo $title; ?>
+                ' . $title . '
             </a>
             <div class="case__video">
-                <?php get_video($video_id); ?>
+                ' . get_video($video_id) . '
             </div>
             <a
-                href="<?php echo $permalink; ?>"
+                href=". $permalink . "
                 class="case__main">
                 <div class="case__about">
                     <div class="case__about-preview">
-                        <?php echo $intro; ?>
+                        ' . $intro . '
                     </div>
                     <p>
                         Read more about this case:
-                        <span class="case__read-more" href="<?php echo $permalink; ?>">
-                             <?php echo $title; ?>
+                        <span class="case__read-more" href="' . $permalink . '">
+                             ' . $title . '
                         </span>
                     </p>
                 </div>
-                <?php get_client($case_id); ?>
-
-
+                ' . get_client($case_id) . '
             </a>
-
-        </div>
-    <?php
+        </div>';
 }
 
 function get_client($case_id) {
@@ -150,31 +158,29 @@ function get_client($case_id) {
     $client_name = $client['name'];
     $client_description = $client['description'];
     $client_logo = $client['logo'];
-    ?>
+    return '
     <div class="case__client">
         <div
-            style="background-image: url(<?php echo $client_logo; ?>)"
+            style="background-image: url(' . $client_logo . ')"
             class="case__avator">
         </div>
         <div class="case__client-description">
             <div class="case__client-name">
-                <?php echo $client_name; ?>
+                ' . $client_name . '
             </div>
             <div class="case__client-position">
-                <?php echo $client_description; ?>
+                ' . $client_description . '
             </div>
         </div>
-    </div>
-    <?php
+    </div>';
 }
 
 function get_video($video_id) {
-    ?>
-    <div class="video" data-video-id="<?php echo $video_id; ?>">
+    return '
+    <div class="video" data-video-id="' . $video_id . '">
         <div
-            id="video-<?php echo $video_id; ?>"
+            id="video-' . $video_id . '"
             class="video__container"></div>
-    </div>
-    <?php
+    </div>';
 }
 

@@ -8,11 +8,13 @@
 
  <div class="content">
      <div class="pagewrap">
-         <?php if(have_posts()): while(have_posts()) : the_post(); ?>
+         <div class="page__intro">
+             <?php if(have_posts()): while(have_posts()) : the_post(); ?>
 
-             <?php the_content(); ?>
+                  <?php the_content(); ?>
 
-         <?php endwhile; endif; ?>
+              <?php endwhile; endif; ?>
+         </div>
 
          <div class="testimonials">
             <?php
@@ -23,7 +25,7 @@
                 $q = new WP_Query($args);
                 if($q->have_posts()) : while($q->have_posts()) : $q->the_post();
                     $testimonial_id = get_the_ID();
-                    get_testimonial($testimonial_id, true);
+                    echo get_testimonial($testimonial_id, true);
                 endwhile;
                 endif;
             ?>

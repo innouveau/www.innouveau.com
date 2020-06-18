@@ -12,10 +12,16 @@
     z-index: 10;
     height: 104px;
     transition: all 0.2s ease;
+    pointer-events: none;
+
+    .languages, .hamburger {
+        pointer-events: all;
+    }
 
     .identity {
         display: flex;
         align-items: center;
+        pointer-events: all;
 
         .identity__slogan {
             position: absolute;
@@ -42,6 +48,7 @@
         height: 54px;
         background: rgba(245,245,245, 1);
         box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+        pointer-events: all;
 
         .header__page-title {
             opacity: 1;

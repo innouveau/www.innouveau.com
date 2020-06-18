@@ -9,7 +9,7 @@
 
 <div class="cases-preview">
     <div class="case__container">
-        <?php get_case($highlighted_case_id, 3); ?>
+        <?php echo get_case($highlighted_case_id, 3); ?>
     </div>
     <a
         href="<?php echo get_the_permalink($cases_id); ?>"

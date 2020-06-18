@@ -8,11 +8,13 @@
 
  <div class="content">
      <div class="pagewrap">
-         <?php if(have_posts()): while(have_posts()) : the_post(); ?>
+         <div class="page__intro">
+          <?php if(have_posts()): while(have_posts()) : the_post(); ?>
 
-             <?php the_content(); ?>
+               <?php the_content(); ?>
 
-         <?php endwhile; endif; ?>
+           <?php endwhile; endif; ?>
+          </div>
 
          <div class="cases">
             <?php
@@ -23,7 +25,7 @@
                 $q = new WP_Query($args);
                 if($q->have_posts()) : while($q->have_posts()) : $q->the_post();
                     $case_id = get_the_ID();
-                    get_case($case_id, 2);
+                    echo get_case($case_id, 2);
                 endwhile;
                 endif;
             ?>
