@@ -1,3 +1,5 @@
+<img src="https://innouveau.com/projecten/2020/wp-content/uploads/2020/11/europe.gif">
+
 <?php
     $language = pll_current_language();
     if ($language == 'en') {

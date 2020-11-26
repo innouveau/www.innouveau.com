@@ -46,12 +46,13 @@
         if ($site) {
             echo '<div class="case__site"><a href="' . $site . '" target="_blank">Bezoek de site</a></div>';
         }
+
+        if ($video_id) {
+            echo '<div class="case__video">' . get_video($video_id) . '</div>';
+        }
+
     ?>
 
-
-    <div class="case__video">
-        <?php echo get_video($video_id); ?>
-    </div>
 
 
 

@@ -3,7 +3,37 @@ $(window).ready(function(){
     initScroll();
     initYoutubeAPI();
     initImageFadeIn();
+    initPillarImages();
 });
+
+function initPillarImages() {
+    let elements, i, interval;
+    elements = shuffleArray($('.pillar-page__image'));
+    console.log(elements);
+    i = 0;
+    if (elements.length > 0) {
+        interval = setInterval(function(){
+            fadeInElement(elements[i]);
+            i++;
+            if (i === elements.length) {
+                clearInterval(interval);
+            }
+        }, 100)
+    }
+
+}
+
+function fadeInElement(element) {
+    $(element).css('opacity', 100)
+}
+
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
 
 function initScroll() {
     $(window).scroll(function (event) {

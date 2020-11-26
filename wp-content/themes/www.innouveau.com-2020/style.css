@@ -88,7 +88,7 @@ html.html body {
 body {
   font-family: 'Dosis', sans-serif;
   margin: 0;
-  font-size: 17px;
+  font-size: 20px;
   line-height: 1.41176471;
 }
 strong {
@@ -130,6 +130,11 @@ a {
   font-size: 24px;
   font-weight: 500;
   margin-bottom: 36px;
+  color: #DE7070;
+  text-align: center;
+}
+.section img {
+  max-width: 100%;
 }
 .section.section--centered {
   text-align: center;
@@ -143,14 +148,14 @@ a {
   font-weight: 700;
 }
 .hamburger {
-  width: 40px;
+  width: 32px;
   cursor: pointer;
   padding: 8px;
 }
 .hamburger .burger {
   height: 3px;
-  margin-bottom: 4px;
-  background: #000;
+  margin-bottom: 3px;
+  background: #51451E;
 }
 figure {
   margin-top: 40px;
@@ -843,19 +848,22 @@ body.home .header__page-title {
 .languages {
   display: flex;
   align-items: center;
-  margin: 0 20px 6px 0;
+  margin: 0 16px 1px 0;
+  color: #DE7070;
+  font-weight: 700;
 }
 .languages a {
   text-transform: uppercase;
-  color: #000;
+  color: #bbb;
   text-decoration: none;
   font-family: 'Roboto condensed', sans-serif;
-  font-size: 20px;
-  border-bottom: 1px solid transparent;
-  padding-bottom: 1px;
+  font-size: 15px;
+  border-bottom: 2px solid transparent;
+  padding-bottom: 0;
+  font-weight: 400;
 }
 .languages a.language--current {
-  border-bottom: 1px solid #000;
+  border-bottom: 2px solid #bbb;
 }
 .languages .language__divider {
   margin: 0 4px;
@@ -868,7 +876,7 @@ body.home .header__page-title {
   max-width: 100%;
   height: 100%;
   z-index: 20;
-  background: #FFD400;
+  background: #fff;
   box-shadow: -2px 0 8px rgba(0, 0, 0, 0.2);
   transition: all 0.2s ease;
 }
@@ -879,28 +887,30 @@ body.home .header__page-title {
 .menu ul > li {
   list-style: none;
   display: block;
-  border-top: 1px solid #fff;
+  border-top: 1px solid #ddd;
 }
 .menu ul > li a {
   text-decoration: none;
   display: block;
-  padding: 10px 20px;
+  padding: 16px 20px;
   font-weight: 500;
-  font-size: 18px;
+  font-size: 16px;
   font-family: 'Tinos', serif;
-  background: #FFD400;
-  transition: all 0.2s ease;
-}
-.menu ul > li:hover a {
   background: #fff;
+  transition: all 0.2s ease;
+  color: #333;
+}
+.menu ul > li:hover a,
+.menu ul > li.current-menu-item a {
+  color: #DE7070;
 }
 .menu .menu__close {
   position: absolute;
   right: 16px;
   top: 16px;
   cursor: pointer;
-  width: 36px;
-  height: 36px;
+  width: 32px;
+  height: 32px;
   text-align: center;
 }
 .menu .menu__close:before,
@@ -909,9 +919,9 @@ body.home .header__page-title {
   left: 11px;
   top: 2px;
   content: ' ';
-  height: 30px;
-  width: 3px;
-  background-color: #000;
+  height: 24px;
+  width: 2px;
+  background-color: #51451E;
 }
 .menu .menu__close:before {
   transform: rotate(45deg);
@@ -1026,19 +1036,82 @@ body.home .header__page-title {
 .page-template-template--contact .footer .footer__container .footer__row .footer__col {
   font-size: 14px;
 }
-.template--pillar .page__header {
-  margin: 0 0 40px 0;
+.template--pillar .pillar-page__images {
+  height: 200px;
+  margin: 150px 0 80px 0;
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
   width: 100%;
 }
-.template--pillar .page__header .page__header-main {
-  border: 2px solid #000;
-  border-top: 0;
-  height: 400px;
+.template--pillar .pillar-page__images .pillar-page__image {
+  height: 100%;
+  margin-right: 20px;
+  opacity: 0;
+  transition: all 0.3s ease;
 }
-.template--pillar h1 {
-  text-align: center;
+.template--pillar .pillar-page__images .pillar-page__image img {
+  display: block;
+  height: 100%;
+}
+.template--pillar .pillar__header {
+  background: #fff;
+  padding: 12px;
+  margin-bottom: 40px;
+  border-left: 4px solid #FFD400;
+}
+.template--pillar .pillar__header h1 {
+  font-family: 'Tinos', serif;
+  font-weight: 700;
+  font-size: 36px;
+  margin: 0;
+  color: #51451E;
+}
+.template--pillar .pillar__header h3 {
   font-family: 'Tinos', serif;
   font-weight: 400;
+  font-size: 20px;
+  margin: 0;
+  color: #888;
+}
+.template--pillar .section p:first-child {
+  font-size: 24px;
+  font-family: 'Tinos', serif;
+  margin-bottom: 48px;
+  line-height: 1.4;
+}
+.template--pillar .cases .case {
+  border-left: 4px solid #FFD400;
+  margin-bottom: 12px;
+  width: 344px;
+  box-shadow: 2px 2px 11px rgba(0, 0, 0, 0.3);
+  border-radius: 2px;
+}
+.template--pillar .cases .case .case__title {
+  font-size: 18px;
+  padding: 20px;
+}
+.template--pillar .cases .case .case__video {
+  width: 340px;
+  border-bottom: 0;
+  border-top: 0;
+  padding: 0;
+}
+.template--pillar .cases .case .case__main {
+  padding: 0;
+  display: block;
+}
+.template--pillar .cases .case .case__main .case__about {
+  font-size: 15px;
+  border-bottom: 0;
+  padding: 20px;
+}
+.template--pillar .cases .case .case__main .case__client {
+  padding: 20px;
+  border-top: 1px solid #ddd;
+}
+.template--pillar .cases .case .case__main .case__client .case__client-description .case__client-name {
+  font-size: 16px;
 }
 .single--case .page__header .case__client-container {
   background: #fff;
@@ -1071,6 +1144,15 @@ body.home .header__page-title {
   margin-bottom: 40px;
   position: relative;
 }
+.single--case .case__body {
+  max-width: 100%;
+  margin: 0 auto;
+  width: 600px;
+}
+.single--case .case__body figure {
+  margin-left: 0;
+  margin-right: 0;
+}
 .single--case .case__body h3 {
   font-family: 'Tinos', serif;
   font-weight: 700;
@@ -1082,10 +1164,6 @@ body.home .header__page-title {
 }
 .single--case .case__body p {
   font-size: 20px;
-  width: 600px;
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
 }
 .single--case .case__body .case__frame {
   background: #fff;
@@ -1119,4 +1197,7 @@ body.home .header__page-title {
   color: #fff;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
   margin-bottom: 2px;
+}
+.app {
+  width: 100%;
 }

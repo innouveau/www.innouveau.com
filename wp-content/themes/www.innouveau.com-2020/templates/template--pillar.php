@@ -5,29 +5,40 @@
 
 
 <?php
-    $images = wp_get_attachment_image_src( get_post_thumbnail_id( $page_id ), 'full' );
+    $featured_images = get_all_featured_images($page_id);
     $testimonial_id = get_field('testimonial');
     $category = get_field('category');
+    $subtitle = get_field('subtitle');
 ?>
 
 <?php get_header(); ?>
 
 <div class="content template--pillar">
-    <div class="pagewrap">
-        <div class="page__header">
-            <div
-                style="background-image: url(<?php echo $images[0]; ?>)"
-                class="page__header-main">
-                <div class="page__header-text">
 
-                </div>
-            <?php include(dirname(__DIR__) . '/modules/image-payoff.php'); ?>
-            </div>
+<div class="pillar-page__images">
+            <?php
+                foreach ($featured_images as $featured_image) {
+                    echo '
+                        <div class="pillar-page__image">
+                            <img src="' . $featured_image .'">
+                        </div>
+                    ';
+                }
+            ?>
         </div>
 
-        <h1>
-            <?php the_title(); ?>
-        </h1>
+    <div class="pagewrap">
+
+        <div class="pillar__header">
+            <h1>
+                <?php the_title(); ?>
+            </h1>
+            <h3>
+                <?php echo $subtitle; ?>
+            </h3>
+        </div>
+
+
 
         <div class="section">
             <?php if(have_posts()): while(have_posts()) : the_post(); ?>
@@ -39,6 +50,9 @@
                 ?>
         </div>
         <div class="section">
+            <h3>
+                Bekijk enkele projecten
+            </h3>
             <div class="cases">
                 <?php
                     $args = array(
@@ -49,7 +63,7 @@
                     $q = new WP_Query($args);
                     if($q->have_posts()) : while($q->have_posts()) : $q->the_post();
                         $case_id = get_the_ID();
-                        get_case($case_id, 2);
+                        echo get_case($case_id, 2);
                     endwhile;
                     endif;
                 ?>

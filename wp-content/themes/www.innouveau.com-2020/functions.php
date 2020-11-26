@@ -32,6 +32,40 @@ add_shortcode( 'testimonial', 'testimonial_shortcode' );
 add_shortcode( 'employee', 'employee_shortcode' );
 add_shortcode( 'employees', 'employees_shortcode' );
 
+// extra featured images
+
+
+add_filter( 'kdmfi_featured_images', function( $featured_images ) {
+    for ($i = 1; $i < 6; $i++) {
+        $args = array(
+            'id' => 'featured-image-' . $i,
+            'desc' => '',
+            'label_name' => 'Featured Image ' . $i,
+            'label_set' => 'Set featured image ' . $i,
+            'label_remove' => 'Remove featured image ' . $i,
+            'label_use' => 'Set featured image ' . $i,
+            'post_type' => array( 'page' ),
+        );
+
+        $featured_images[] = $args;
+    }
+    return $featured_images;
+});
+
+function get_all_featured_images($page_id) {
+    $featured_images = [];
+    $images = wp_get_attachment_image_src( get_post_thumbnail_id( $page_id ), 'full' );
+    array_push($featured_images, $images[0]);
+    for ($i = 1; $i < 6; $i++) {
+        $featured_image = kdmfi_get_featured_image_src( 'featured-image-' . $i, 'full' );
+        array_push($featured_images, $featured_image);
+    }
+    return $featured_images;
+}
+
+
+
+
 
 
 function get_employee($employee_id) {
@@ -152,6 +186,7 @@ function get_case($case_id, $size) {
             </a>
         </div>';
 }
+
 
 function get_client($case_id) {
     $client = get_field('client', $case_id);

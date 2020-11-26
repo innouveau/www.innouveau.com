@@ -18,9 +18,11 @@
         <div class="section">
             <div class="intro">
                 <p>
-                Innouveau is een webdevelopment-bureau gespecialiseerd in online applicaties.
-                We ondersteunen bedrijven, (ontwerp)bureaus en agency’s bij
-                integrale webprojecten, van design tot development.
+                <b>Innouveau is een innovatief bureau<br>voor webdevelopment.</b><br><br>
+                We schrijven code, maar houden van design.<br>
+                We ondersteunen startups, ontwerpbureaus en agency’s<br>bij
+                integrale webprojecten, van design tot development.<br><br>
+                Maak kennis met ons werk<br> en neem gerust contact op bij vragen.
                 </p>
             </div>
             <!--

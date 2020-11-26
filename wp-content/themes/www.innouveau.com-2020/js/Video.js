@@ -16,6 +16,14 @@ class Video {
         return this.element.data('video-id');
     }
 
+    get start() {
+        if (this.id.indexOf('t=') > -1) {
+            return Number(this.id.split('t=')[1]);
+        } else {
+            return 0;
+        }
+    }
+
     init() {
         this.load();
     }
@@ -52,7 +60,8 @@ class Video {
                 'showinfo': 0,
                 'modestbranding': 1,
                 'rel': 0,
-                'loop': 1
+                'loop': 1,
+                'start': this.start
             }
         });
     }
