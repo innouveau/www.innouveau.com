@@ -158,16 +158,22 @@ function get_case($case_id, $size) {
         $permalink = get_the_permalink($case_id);
         $images = wp_get_attachment_image_src( get_post_thumbnail_id( $case_id ), 'full' );
         $video_id = get_field('video', $case_id);
-        return '
+        $case_preview_image = get_field('case_preview_image', $case_id);
+
+        $html = '
         <div class="case case--size-' . $size . '">
             <a
                 href="' . $permalink . '"
                 class="case__title">
                 ' . $title . '
-            </a>
-            <div class="case__video">
-                ' . get_video($video_id) . '
-            </div>
+            </a>';
+        if ($video_id) {
+            $html .= '<div class="case__video">' . get_video($video_id) . '</div>';
+        } else {
+            $html .= '<div style="background-image: url(' . $case_preview_image . ')" class="case__image"></div>';
+        }
+
+        $html .= '
             <a
                 href=". $permalink . "
                 class="case__main">
@@ -185,6 +191,7 @@ function get_case($case_id, $size) {
                 ' . get_client($case_id) . '
             </a>
         </div>';
+        return $html;
 }
 
 

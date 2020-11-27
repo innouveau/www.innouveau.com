@@ -1091,11 +1091,20 @@ body.home .header__page-title {
   font-size: 18px;
   padding: 20px;
 }
-.template--pillar .cases .case .case__video {
+.template--pillar .cases .case .case__video,
+.template--pillar .cases .case .case__image {
   width: 340px;
-  border-bottom: 0;
-  border-top: 0;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+}
+.template--pillar .cases .case .case__video {
   padding: 0;
+}
+.template--pillar .cases .case .case__image {
+  height: 191.25px;
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
 }
 .template--pillar .cases .case .case__main {
   padding: 0;
