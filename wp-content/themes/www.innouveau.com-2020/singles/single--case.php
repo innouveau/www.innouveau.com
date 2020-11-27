@@ -48,7 +48,7 @@
         }
 
         if ($video_id) {
-            echo '<div class="case__video">' . get_video($video_id) . '</div>';
+            //echo '<div class="case__video">' . get_video($video_id) . '</div>';
         }
 
     ?>

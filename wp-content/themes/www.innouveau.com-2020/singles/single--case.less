@@ -10,11 +10,15 @@
     .case__intro {
         font-family: @serif;
         font-size: 24px;
-        margin-bottom: 80px;
+        max-width: 100%;
+        margin: 0 auto 80px auto;
+        width: 600px;
     }
 
     .case__team {
-        margin-bottom: 20px;
+        max-width: 100%;
+        margin: 0 auto 20px auto;
+        width: 600px;
         border-left :2px solid #000;
         padding: 12px 24px;
         font-family: @serif;
@@ -22,7 +26,9 @@
     }
 
     .case__site {
-        margin-bottom: 20px;
+        max-width: 100%;
+        margin: 0 auto 20px auto;
+        width: 600px;
 
         a {
             background: @yellow;
@@ -41,14 +47,15 @@
     }
 
     .case__body {
-        max-width: 100%;
-        margin: 0 auto;
-        width: 600px;
 
-        figure {
-            margin-left: 0;
-            margin-right: 0;
+
+        p, figure{
+            max-width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            width: 600px;
         }
+
 
         h3 {
             font-family: @serif;
@@ -68,6 +75,10 @@
             background: #fff;
             padding: 20px;
             margin: 60px 0;
+        }
+
+        .app {
+            margin-top: 80px;
         }
     }
 

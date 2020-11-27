@@ -175,7 +175,7 @@ function get_case($case_id, $size) {
 
         $html .= '
             <a
-                href=". $permalink . "
+                href="' . $permalink . '"
                 class="case__main">
                 <div class="case__about">
                     <div class="case__about-preview">
