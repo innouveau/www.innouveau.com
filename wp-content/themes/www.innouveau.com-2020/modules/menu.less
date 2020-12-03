@@ -29,14 +29,25 @@
                 background: #fff;
                 transition: all 0.2s ease;
                 color: #333;
-            }
 
-            &:hover,
-            &.current-menu-item {
-
-                a {
+                &:hover {
                     color: @red;
                 }
+            }
+
+            &.current-menu-item {
+
+                > a {
+                    color: @red;
+                }
+            }
+        }
+
+        &.sub-menu {
+            margin-top: 0;
+
+            a {
+                padding-left: 36px;
             }
         }
     }

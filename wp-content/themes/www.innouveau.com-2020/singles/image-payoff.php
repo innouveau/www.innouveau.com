@@ -5,7 +5,4 @@
             <div class="red-circle"></div>
         </div>
     </div>
-    <div class="image-payoff__text">
-        smart solutions for ambitious businesses
-    </div>
 </div>

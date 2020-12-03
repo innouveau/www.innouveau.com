@@ -23,11 +23,18 @@ function case_shortcode($atts) {
     return '<div class="case-container">' . get_case($atts['id'], 0) . '</div>';
 }
 
+function page_shortcode($atts) {
+    $link =  get_the_permalink($atts['id']);
+    $title = get_the_title($atts['id']);
+    return '<div class="boxed-link">👉 <a href="' . $link . '">Lees meer over... ' . $title . '</a></div>';
+}
+
 function employees_shortcode($atts) {
     return '<div class="employee-container">' . get_employee(513) . ' ' . get_employee(528) . '</div>';
 }
 
 add_shortcode( 'case', 'case_shortcode' );
+add_shortcode( 'page', 'page_shortcode' );
 add_shortcode( 'testimonial', 'testimonial_shortcode' );
 add_shortcode( 'employee', 'employee_shortcode' );
 add_shortcode( 'employees', 'employees_shortcode' );
@@ -141,7 +148,7 @@ function get_testimonial($testimonial_id, $with_permalink) {
         if ($with_permalink) {
             $html .=
             '<div class="testimonial__footer">
-            Read more about this case:
+            Read more about this case 👉
                 <a href="' . $case_permalink . '">
                      ' . $case_title . '
                 </a>
@@ -182,7 +189,7 @@ function get_case($case_id, $size) {
                         ' . $intro . '
                     </div>
                     <p>
-                        Read more about this case:
+                        👉 Read more about this case:
                         <span class="case__read-more" href="' . $permalink . '">
                              ' . $title . '
                         </span>

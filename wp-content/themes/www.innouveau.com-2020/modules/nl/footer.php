@@ -30,7 +30,7 @@
                         </tr>
                         <tr>
                             <td>BIC</td>
-                            <td>INGBNL2A</td>
+                            <td>TRIONL2U</td>
                         </tr>
                         <tr>
                             <td>BTW</td>

@@ -103,17 +103,23 @@ a.big-link {
 a {
   color: inherit;
 }
+.standard-page p:first-of-type {
+  font-size: 24px;
+  font-family: 'Tinos', serif;
+  margin-bottom: 48px;
+  line-height: 1.4;
+}
 .standard-page h1 {
   text-align: center;
   font-family: 'Tinos', serif;
   font-weight: 400;
   margin: 20px 0 60px 0;
 }
+.standard-page h2 {
+  margin-top: 90px;
+}
 .standard-page h3 {
-  text-align: center;
-  font-family: 'Tinos', serif;
-  margin: 40px 0 20px 0;
-  font-size: 24px;
+  margin-top: 60px;
 }
 .section {
   padding: 60px 0;
@@ -212,7 +218,6 @@ figure figcaption {
 }
 .employee-container {
   display: flex;
-  justify-content: center;
 }
 .employee-container .employee {
   margin-right: 16px;
@@ -238,6 +243,26 @@ figure figcaption {
   top: 0;
   width: 100%;
   height: 100%;
+}
+.boxed-link {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  height: 56px;
+  padding: 8px 12px;
+  border: 1px solid #FFD400;
+  background: #fff;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+.boxed-link a {
+  margin-left: 8px;
+  color: #000;
+  display: block;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.boxed-link a:hover {
+  border-bottom: 1px solid #000;
 }
 .cases {
   display: flex;
@@ -768,7 +793,6 @@ body.home .header__page-title {
 .case__testimonial.testimonial--1 .testimonial {
   width: 400px;
   max-width: 100%;
-  margin: 0 auto;
 }
 .case__testimonial.testimonial--1 .testimonial .testimonial__main {
   padding: 20px;
@@ -900,9 +924,17 @@ body.home .header__page-title {
   transition: all 0.2s ease;
   color: #333;
 }
-.menu ul > li:hover a,
-.menu ul > li.current-menu-item a {
+.menu ul > li a:hover {
   color: #DE7070;
+}
+.menu ul > li.current-menu-item > a {
+  color: #DE7070;
+}
+.menu ul.sub-menu {
+  margin-top: 0;
+}
+.menu ul.sub-menu a {
+  padding-left: 36px;
 }
 .menu .menu__close {
   position: absolute;
@@ -1080,46 +1112,56 @@ body.home .header__page-title {
   margin-bottom: 48px;
   line-height: 1.4;
 }
-.template--pillar .cases .case {
+.standard-page .case,
+.template--pillar .case {
   border-left: 4px solid #FFD400;
   margin-bottom: 12px;
   width: 344px;
   box-shadow: 2px 2px 11px rgba(0, 0, 0, 0.3);
   border-radius: 2px;
 }
-.template--pillar .cases .case .case__title {
+.standard-page .case .case__title,
+.template--pillar .case .case__title {
   font-size: 18px;
   padding: 20px;
 }
-.template--pillar .cases .case .case__video,
-.template--pillar .cases .case .case__image {
+.standard-page .case .case__video,
+.template--pillar .case .case__video,
+.standard-page .case .case__image,
+.template--pillar .case .case__image {
   width: 340px;
   border-top: 1px solid #ddd;
   border-bottom: 1px solid #ddd;
 }
-.template--pillar .cases .case .case__video {
+.standard-page .case .case__video,
+.template--pillar .case .case__video {
   padding: 0;
 }
-.template--pillar .cases .case .case__image {
+.standard-page .case .case__image,
+.template--pillar .case .case__image {
   height: 191.25px;
   background-size: cover;
   background-position: 50% 50%;
   background-repeat: no-repeat;
 }
-.template--pillar .cases .case .case__main {
+.standard-page .case .case__main,
+.template--pillar .case .case__main {
   padding: 0;
   display: block;
 }
-.template--pillar .cases .case .case__main .case__about {
+.standard-page .case .case__main .case__about,
+.template--pillar .case .case__main .case__about {
   font-size: 15px;
   border-bottom: 0;
   padding: 20px;
 }
-.template--pillar .cases .case .case__main .case__client {
+.standard-page .case .case__main .case__client,
+.template--pillar .case .case__main .case__client {
   padding: 20px;
   border-top: 1px solid #ddd;
 }
-.template--pillar .cases .case .case__main .case__client .case__client-description .case__client-name {
+.standard-page .case .case__main .case__client .case__client-description .case__client-name,
+.template--pillar .case .case__main .case__client .case__client-description .case__client-name {
   font-size: 16px;
 }
 .single--case .page__header .case__client-container {
@@ -1132,6 +1174,11 @@ body.home .header__page-title {
   margin: 0 auto 80px auto;
   width: 600px;
 }
+.single--case .boxed-link {
+  margin: 0 auto 40px auto;
+  width: 600px;
+  max-width: 100%;
+}
 .single--case .case__team {
   max-width: 100%;
   margin: 0 auto 20px auto;
@@ -1140,18 +1187,6 @@ body.home .header__page-title {
   padding: 12px 24px;
   font-family: 'Tinos', serif;
   background: #fff;
-}
-.single--case .case__site {
-  max-width: 100%;
-  margin: 0 auto 20px auto;
-  width: 600px;
-}
-.single--case .case__site a {
-  background: #FFD400;
-  padding: 10px;
-  color: #000;
-  display: block;
-  text-decoration: none;
 }
 .single--case .case__video {
   background: #ddd;

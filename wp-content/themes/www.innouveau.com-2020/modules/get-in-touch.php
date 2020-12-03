@@ -29,6 +29,7 @@
         <div
             href="<?php echo $permalink; ?>"
             class="get-in-touch quote">
+            👋
             <div class="quote__main">
                 <?php echo $get_in_touch_text; ?>
             </div>

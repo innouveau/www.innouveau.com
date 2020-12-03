@@ -49,7 +49,7 @@
         </div>
         <div class="section">
             <h3>
-                Bekijk enkele projecten
+                Bekijk enkele projecten 👇
             </h3>
             <div class="cases">
                 <?php

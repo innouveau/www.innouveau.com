@@ -44,7 +44,7 @@
 
     <?php
         if ($site) {
-            echo '<div class="case__site"><a href="' . $site . '" target="_blank">Bezoek de site</a></div>';
+            echo '<div class="boxed-link">👉 <a href="' . $site . '" target="_blank">Bezoek de site</a></div>';
         }
 
         if ($video_id) {
