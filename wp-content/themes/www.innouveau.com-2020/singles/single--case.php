@@ -52,7 +52,13 @@
 
     <?php
         if ($site) {
-            echo '<div class="boxed-link">👉 <a href="' . $site . '" target="_blank">Bezoek de site</a></div>';
+            $language = pll_current_language();
+            if ($language == 'en') {
+                $text = 'Go to website';
+            } else {
+                $text = 'Bezoek de site';
+            }
+            echo '<div class="boxed-link">👉 <a href="' . $site . '" target="_blank">' . $text . '</a></div>';
         }
 
 
