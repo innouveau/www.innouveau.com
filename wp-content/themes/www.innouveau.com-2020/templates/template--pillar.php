@@ -49,7 +49,15 @@
         </div>
         <div class="section">
             <h3>
-                Bekijk enkele projecten 👇
+                <?php
+                    $language = pll_current_language();
+                    if ($language == 'en') {
+                       echo 'Some of our projects 👇';
+                    } else {
+                        echo 'Bekijk enkele projecten 👇';
+                    }
+                ?>
+
             </h3>
             <div class="cases">
                 <?php

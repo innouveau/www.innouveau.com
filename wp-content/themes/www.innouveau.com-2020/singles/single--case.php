@@ -22,9 +22,7 @@
             </h2>
         </div>
 <?php
-        if ($video_id) {
-            echo '<div class="case__video">' . get_video($video_id) . '</div>';
-        } else {
+        if ($images) {
             ?>
              <div
                         style="background-image: url(<?php echo $images[0]; ?>)"
@@ -32,7 +30,8 @@
                        <?php include('image-payoff.php'); ?>
                     </div>
             <?php
-
+        } else {
+            echo '<div class="case__video">' . get_video($video_id) . '</div>';
         }
 ?>
 

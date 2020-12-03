@@ -1,5 +1,6 @@
 <div class="get-in-touch">
     <?php
+        $employee_id = 513;
         $language = pll_current_language();
 
         if ($language == 'en') {

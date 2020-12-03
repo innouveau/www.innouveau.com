@@ -890,7 +890,7 @@ body.home .header__page-title {
   border-bottom: 2px solid #bbb;
 }
 .languages .language__divider {
-  margin: 0 4px;
+  margin: 0 4px 4px 4px;
 }
 .menu {
   position: fixed;

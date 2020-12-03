@@ -26,7 +26,13 @@ function case_shortcode($atts) {
 function page_shortcode($atts) {
     $link =  get_the_permalink($atts['id']);
     $title = get_the_title($atts['id']);
-    return '<div class="boxed-link">👉 <a href="' . $link . '">Lees meer over... ' . $title . '</a></div>';
+    $language = pll_current_language();
+    if ($language == 'en') {
+        $text = 'Read more about... ';
+    } else {
+        $text = 'Lees meer over... ';
+    }
+    return '<div class="boxed-link">👉 <a href="' . $link . '">' . $text . $title . '</a></div>';
 }
 
 function employees_shortcode($atts) {
@@ -115,7 +121,10 @@ function get_employee($employee_id) {
     return $html;
 }
 
-function get_testimonial($testimonial_id, $with_permalink) {
+function get_testimonial($original_id, $with_permalink) {
+    $translations = pll_get_post_translations($original_id);
+    $language = pll_current_language();
+    $testimonial_id = $translations[$language];
     $testimonial = get_post($testimonial_id);
     $testimonial_quote = $testimonial->post_content;
     $testimonial_client = get_the_title($testimonial_id);
@@ -147,9 +156,14 @@ function get_testimonial($testimonial_id, $with_permalink) {
             </div>';
         if ($with_permalink) {
             $html .=
-            '<div class="testimonial__footer">
-            Read more about this case 👉
-                <a href="' . $case_permalink . '">
+            '<div class="testimonial__footer">';
+            $language = pll_current_language();
+            if ($language == 'en') {
+                $html .= '👉 Read more about this case:';
+            } else {
+                $html .= '👉 Lees meer over dit project:';
+            }
+            $html .= '<a href="' . $case_permalink . '">
                      ' . $case_title . '
                 </a>
             </div>';
@@ -188,9 +202,16 @@ function get_case($case_id, $size) {
                     <div class="case__about-preview">
                         ' . $intro . '
                     </div>
-                    <p>
-                        👉 Read more about this case:
-                        <span class="case__read-more" href="' . $permalink . '">
+                    <p>';
+        $language = pll_current_language();
+        if ($language == 'en') {
+            $html .= '👉 Read more about this case:';
+        } else {
+            $html .= '👉 Lees meer over dit project:';
+        }
+
+
+        $html .= '<span class="case__read-more" href="' . $permalink . '">
                              ' . $title . '
                         </span>
                     </p>

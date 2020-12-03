@@ -44,7 +44,7 @@
         </div>
         <div class="section">
             <?php
-                $testimonial_id = 97;
+                $testimonial_id = 85;
                 $testimontials_id = 73;
             ?>
             <div class="testimonial-home">
@@ -52,7 +52,7 @@
                     <div class="testimonial-home__statement">
                         We are commited to both client and product:
                     </div>
-                    <?php get_testimonial($testimonial_id, true); ?>
+                    <?php echo get_testimonial($testimonial_id, true); ?>
                 </div>
                 <a
                     href="<?php echo get_the_permalink($testimontials_id); ?>"

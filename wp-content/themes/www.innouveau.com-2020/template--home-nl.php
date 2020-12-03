@@ -45,7 +45,7 @@
         <div class="section">
             <?php
                 $testimonial_id = 85;
-                $testimontials_id = 50;
+                $testimonials_page_id = 50;
             ?>
             <div class="testimonial-home">
                 <div class="testimonial-home__container">
@@ -55,7 +55,7 @@
                     <?php echo get_testimonial($testimonial_id, true); ?>
                 </div>
                 <a
-                    href="<?php echo get_the_permalink($testimontials_id); ?>"
+                    href="<?php echo get_the_permalink($testimonials_page_id); ?>"
                     class="testimonial-home__more">
                     Toon meer testimonials<br>
                     <div class="arrow-link arrow-link--small"></div>
