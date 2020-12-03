@@ -1190,11 +1190,11 @@ body.home .header__page-title {
 }
 .single--case .case__video {
   background: #ddd;
-  margin-top: 60px;
-  margin-bottom: 40px;
   position: relative;
+  border-top: 1px solid #aaa;
+  border-bottom: 1px solid #aaa;
 }
-.single--case .case__body p,
+.single--case .case__body > p,
 .single--case .case__body figure {
   max-width: 100%;
   margin-left: auto;

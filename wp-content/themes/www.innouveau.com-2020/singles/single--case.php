@@ -21,12 +21,21 @@
                 <?php echo $subtitle; ?>
             </h2>
         </div>
+<?php
+        if ($video_id) {
+            echo '<div class="case__video">' . get_video($video_id) . '</div>';
+        } else {
+            ?>
+             <div
+                        style="background-image: url(<?php echo $images[0]; ?>)"
+                        class="page__header-main">
+                       <?php include('image-payoff.php'); ?>
+                    </div>
+            <?php
 
-        <div
-            style="background-image: url(<?php echo $images[0]; ?>)"
-            class="page__header-main">
-           <?php include('image-payoff.php'); ?>
-        </div>
+        }
+?>
+
         <div class="case__client-container">
            <?php echo get_client($page_id); ?>
         </div>
@@ -47,9 +56,7 @@
             echo '<div class="boxed-link">👉 <a href="' . $site . '" target="_blank">Bezoek de site</a></div>';
         }
 
-        if ($video_id) {
-            //echo '<div class="case__video">' . get_video($video_id) . '</div>';
-        }
+
 
     ?>
 
