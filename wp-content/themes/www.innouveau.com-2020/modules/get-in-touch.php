@@ -1,6 +1,5 @@
 <div class="get-in-touch">
     <?php
-        $employee_id = 513;
         $language = pll_current_language();
 
         if ($language == 'en') {
@@ -9,7 +8,7 @@
             }
     ?>
         <div
-            class="get-in-touch quote">
+            class="quote">
             <div class="quote__main">
                 <?php echo $get_in_touch_text; ?>
             </div>
@@ -29,7 +28,7 @@
     ?>
         <div
             href="<?php echo $permalink; ?>"
-            class="get-in-touch quote">
+            class="quote">
             👋
             <div class="quote__main">
                 <?php echo $get_in_touch_text; ?>

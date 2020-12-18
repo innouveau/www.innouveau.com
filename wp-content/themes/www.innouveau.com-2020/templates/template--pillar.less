@@ -74,7 +74,7 @@
 
         .case__title {
             font-size: 18px;
-            padding: 20px;
+            padding: 12px 20px;
         }
 
         .case__video,
@@ -86,10 +86,6 @@
 
         .case__video {
             padding: 0;
-
-            .video {
-
-            }
         }
 
         .case__image {
@@ -107,16 +103,31 @@
                 font-size: 15px;
                 border-bottom: 0;
                 padding: 20px;
+
+                .case__read-more {
+                    height: 30px;
+                    padding-top: 10px;
+                }
             }
 
             .case__client {
-                padding: 20px;
+                padding: 6px 20px;
                 border-top: 1px solid #ddd;
 
+                .case__avator {
+                    width: 48px;
+                    height: 48px;
+                }
+
                 .case__client-description {
+                    width: calc(100% - 48px);
 
                     .case__client-name {
                         font-size: 16px;
+                    }
+
+                    .case__client-position {
+                        display: none;
                     }
                 }
             }

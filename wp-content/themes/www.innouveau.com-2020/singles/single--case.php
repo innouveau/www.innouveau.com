@@ -60,14 +60,7 @@
             }
             echo '<div class="boxed-link">👉 <a href="' . $site . '" target="_blank">' . $text . '</a></div>';
         }
-
-
-
     ?>
-
-
-
-
 
     <div class="case__body">
        <?php the_content(); ?>

@@ -40,7 +40,10 @@
            <?php include('modules/cases-preview.php'); ?>
         </div>
         <div class="section">
-            <?php include('modules/get-in-touch.php'); ?>
+            <?php
+                $employee_id = 513;
+                include('modules/get-in-touch.php');
+            ?>
         </div>
         <div class="section">
             <?php

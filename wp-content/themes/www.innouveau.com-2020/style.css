@@ -103,6 +103,10 @@ a.big-link {
 a {
   color: inherit;
 }
+p.p--with-bar {
+  padding-left: 20px;
+  border-left: 2px solid #FFD400;
+}
 .standard-page p:first-of-type {
   font-size: 24px;
   font-family: 'Tinos', serif;
@@ -305,7 +309,7 @@ figure figcaption {
   display: block;
 }
 .case .case__main .case__about .case__about-preview {
-  height: 70px;
+  height: 77px;
   overflow: hidden;
   position: relative;
 }
@@ -318,6 +322,14 @@ figure figcaption {
   content: '';
   z-index: 1;
   background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0), #ffffff);
+}
+.case .case__main .case__about .case__read-more {
+  height: 80px;
+  padding-top: 20px;
+}
+.case .case__main .case__about .case__read-more span {
+  border-bottom: 1px solid #000;
+  padding-bottom: 1px;
 }
 .case .case__main .case__about p .case__read-more {
   color: #DE7070;
@@ -563,7 +575,7 @@ a:hover .arrow-link {
   transform: scale(0);
 }
 .footer {
-  margin: 100px 0 200px 0;
+  padding: 100px 0 200px 0;
   color: #555;
 }
 .footer ul {
@@ -772,6 +784,7 @@ body.home .header__page-title {
 }
 .testimonial .testimonial__main .testimonial__quote p:first-child {
   margin-top: 0;
+  font-size: inherit;
 }
 .testimonial .testimonial__footer {
   text-align: right;
@@ -1031,7 +1044,6 @@ body.home .header__page-title {
 }
 .testimonials .testimonial .testimonial__main .testimonial__quote {
   font-size: 16px;
-  height: 160px;
   margin-bottom: 10px;
 }
 .content--home .home__images {
@@ -1123,7 +1135,7 @@ body.home .header__page-title {
 .standard-page .case .case__title,
 .template--pillar .case .case__title {
   font-size: 18px;
-  padding: 20px;
+  padding: 12px 20px;
 }
 .standard-page .case .case__video,
 .template--pillar .case .case__video,
@@ -1155,14 +1167,32 @@ body.home .header__page-title {
   border-bottom: 0;
   padding: 20px;
 }
+.standard-page .case .case__main .case__about .case__read-more,
+.template--pillar .case .case__main .case__about .case__read-more {
+  height: 30px;
+  padding-top: 10px;
+}
 .standard-page .case .case__main .case__client,
 .template--pillar .case .case__main .case__client {
-  padding: 20px;
+  padding: 6px 20px;
   border-top: 1px solid #ddd;
+}
+.standard-page .case .case__main .case__client .case__avator,
+.template--pillar .case .case__main .case__client .case__avator {
+  width: 48px;
+  height: 48px;
+}
+.standard-page .case .case__main .case__client .case__client-description,
+.template--pillar .case .case__main .case__client .case__client-description {
+  width: calc(100% - 48px);
 }
 .standard-page .case .case__main .case__client .case__client-description .case__client-name,
 .template--pillar .case .case__main .case__client .case__client-description .case__client-name {
   font-size: 16px;
+}
+.standard-page .case .case__main .case__client .case__client-description .case__client-position,
+.template--pillar .case .case__main .case__client .case__client-description .case__client-position {
+  display: none;
 }
 .single--case .page__header .case__client-container {
   background: #fff;

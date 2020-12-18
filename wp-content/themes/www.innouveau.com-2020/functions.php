@@ -202,19 +202,18 @@ function get_case($case_id, $size) {
                     <div class="case__about-preview">
                         ' . $intro . '
                     </div>
-                    <p>';
+                    <div class="case__read-more">';
         $language = pll_current_language();
         if ($language == 'en') {
-            $html .= '👉 Read more about this case:';
+            $html .= '👉 <span>Read more about this case: ';
         } else {
-            $html .= '👉 Lees meer over dit project:';
+            $html .= '👉 <span>Lees meer over dit project: ';
         }
 
 
-        $html .= '<span class="case__read-more" href="' . $permalink . '">
-                             ' . $title . '
+        $html .= $title . '
                         </span>
-                    </p>
+                    </div>
                 </div>
                 ' . get_client($case_id) . '
             </a>
