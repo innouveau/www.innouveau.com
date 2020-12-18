@@ -24,21 +24,33 @@
         text-decoration: none;
     }
 
-    .case__image {
-        height: 300px;
-        background-size: cover;
-        background-position: 50% 50%;
-        background-repeat: no-repeat;
-    }
-
-    .case__video {
+    .case__artwork {
+        height: 213px;
+        position: relative;
         border-top: 1px solid #ddd;
         border-bottom: 1px solid #ddd;
+
+        .case__image {
+            height: 100%;
+            background-size: cover;
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+        }
+
+        .case__video {
+
+        }
+
+        .case__artwork-link {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
     }
 
-    .case__image {
-
-    }
 
     .case__main {
         text-decoration: none;

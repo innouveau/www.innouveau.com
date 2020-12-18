@@ -187,14 +187,21 @@ function get_case($case_id, $size) {
                 href="' . $permalink . '"
                 class="case__title">
                 ' . $title . '
-            </a>';
+            </a>
+            <div class="case__artwork">';
         if ($video_id) {
             $html .= '<div class="case__video">' . get_video($video_id) . '</div>';
         } else {
             $html .= '<div style="background-image: url(' . $case_preview_image . ')" class="case__image"></div>';
         }
 
+
+
         $html .= '
+            <a
+                href="' . $permalink . '"
+                class="case__artwork-link"></a>
+            </div>
             <a
                 href="' . $permalink . '"
                 class="case__main">
