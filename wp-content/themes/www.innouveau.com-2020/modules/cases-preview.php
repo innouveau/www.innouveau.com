@@ -7,6 +7,8 @@
         $read_all_text = 'Bekijk alle projecten';
         $highlighted_case_id = 12;
     }
+    // todo translate this number for other language?
+    $cases_id = 54;
 ?>
 
 <div class="cases-preview">

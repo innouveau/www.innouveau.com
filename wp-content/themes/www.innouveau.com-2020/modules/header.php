@@ -12,7 +12,9 @@
         <?php the_title(); ?>
     </div>
 
-    <?php include('language.php'); ?>
+    <?php
+        //include('language.php');
+    ?>
 
     <div class="hamburger">
         <div class="burger"></div>

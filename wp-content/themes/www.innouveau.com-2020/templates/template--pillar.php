@@ -77,7 +77,11 @@
         </div>
         <div class="section">
             <div class="testimonial__container">
-                <?php echo get_testimonial($testimonial_id, true); ?>
+                <?php
+                    if ($testimonial_id) {
+                        echo get_testimonial($testimonial_id, true);
+                    }
+                ?>
             </div>
         </div>
          <div class="section">

@@ -397,6 +397,9 @@ figure figcaption {
   width: calc(50% - 20px);
   margin: 10px;
 }
+.case.case--size-3 .case__artwork {
+  height: 282px;
+}
 .case__client {
   font-family: 'Roboto Condensed', serif;
   font-size: 13px;
