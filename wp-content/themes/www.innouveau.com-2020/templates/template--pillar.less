@@ -57,8 +57,30 @@
         }
     }
 
-    .cases {
+    @media (max-width: @mobile) {
 
+        .pillar__header {
+            margin-bottom: 0;
+
+            h1 {
+                font-size: 24px;
+            }
+
+            h3 {
+                font-size: 18px;
+            }
+        }
+
+        .section {
+
+            p {
+
+                &:first-child {
+                    font-size: 20px;
+                    margin-bottom: 24px;
+                }
+            }
+        }
     }
 }
 

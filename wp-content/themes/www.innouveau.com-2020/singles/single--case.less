@@ -1,5 +1,9 @@
 .single--case {
 
+    iframe {
+        max-width: 100%;
+    }
+
     .page__header {
 
         .case__client-container {
@@ -55,6 +59,7 @@
             text-align: center;
             font-size: 25px;
             width: 440px;
+            max-width: 100%;
             margin: 40px auto 20px auto;
             line-height: 1.2;
         }
@@ -80,6 +85,21 @@
         .page__header {
             margin: 0 -50px 40px -50px;
             width: ~'calc(100% + 100px)';
+        }
+    }
+
+    @media (max-width: @mobile) {
+
+        .page__header {
+            // 24px matches pagewrap
+            margin: 0 -24px 40px -24px;
+            width: calc(100% + 48px);
+            padding-top: 120px;
+        }
+
+        .case__intro {
+            font-size: 20px;
+            margin-bottom: 40px;
         }
     }
 }

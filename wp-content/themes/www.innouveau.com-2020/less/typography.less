@@ -3,6 +3,10 @@ body {
     margin: 0;
     font-size: 20px;
     line-height: 24/17;
+
+    @media (max-width: @mobile) {
+        font-size: 18px;
+    }
 }
 
 strong {
@@ -42,7 +46,6 @@ p {
     }
 
     h1 {
-
         text-align: center;
         font-family: 'Tinos', serif;
         font-weight: 400;
@@ -60,5 +63,20 @@ p {
         //font-family: 'Tinos', serif;
         //margin: 40px 0 20px 0;
         //font-size: 24px;
+    }
+
+    @media (max-width: @mobile) {
+        margin-top: 120px;
+
+        h1 {
+            font-size: 24px;
+        }
+
+        p {
+
+            &:first-of-type {
+                font-size: 20px;
+            }
+        }
     }
 }

@@ -23,17 +23,14 @@ html.html {
     width: 800px;
     margin: 0 auto;
     position: relative;
+
+    @media (max-width: @mobile) {
+        width: 100%;
+        margin: 0;
+        padding: 0 24px;
+    }
 }
 
 #wpadminbar  {
     display: none;
-}
-
-
-@media (max-width: 1025px) {
-
-    .pagewrap {
-        width: 100%;
-        margin: 0;
-    }
 }

@@ -48,6 +48,13 @@
             bottom: 12px;
         }
     }
+
+    @media (max-width: @mobile) {
+
+        .page__header-main {
+            height: 220px;
+        }
+    }
 }
 
 .page__intro {
@@ -58,4 +65,8 @@
     width: 500px;
     max-width: 100%;
     line-height: 1.1;
+
+    @media (max-width: @mobile) {
+        margin-top: 120px;
+    }
 }

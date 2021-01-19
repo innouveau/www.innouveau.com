@@ -71,8 +71,37 @@
                 opacity: 1;
             }
         }
+    }
 
+    @media (max-width: @mobile) {
 
+        .header__page-title {
+            font-size: 14px;
+        }
+
+        .identity {
+
+            .identity__slogan {
+                display: none;
+            }
+        }
+
+        &.header--small {
+
+            .innouveau-logo {
+
+                h3, h4 {
+                    display: none;
+                }
+            }
+
+            &.header--small--delay {
+
+                .identity__slogan {
+                    opacity: 1;
+                }
+            }
+        }
     }
 }
 
