@@ -49,11 +49,10 @@
         }
     }
 
-    @media (max-width: @mobile) {
-
-        .page__header-main {
-            height: 220px;
-        }
+    @media (max-width: @864px) {
+        // 24px matches pagewrap
+        margin: 0 -24px 40px -24px;
+        width: ~'calc(100% + 48px)';
     }
 }
 
