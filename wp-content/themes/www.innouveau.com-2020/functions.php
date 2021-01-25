@@ -1,9 +1,9 @@
 <?php 
 
 //$url = 'http://localhost/innouveau/www.innouveau.com-2020/dev/';
-//$url = 'https://innouveau.com/projecten/2020/';
-//update_option('siteurl', $url );
-//update_option('home', $url );
+$url = 'https://innouveau.com/';
+update_option('siteurl', $url );
+update_option('home', $url );
 
 register_nav_menu('main', 'The main menu');
 add_theme_support('post-thumbnails');
