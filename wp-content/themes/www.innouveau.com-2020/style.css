@@ -97,6 +97,9 @@ html.html body {
     margin-top: 120px;
   }
 }
+.wp-block-image img {
+  height: auto;
+}
 body {
   font-family: 'Dosis', sans-serif;
   margin: 0;
