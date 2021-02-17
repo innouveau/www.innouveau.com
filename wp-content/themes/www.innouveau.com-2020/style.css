@@ -14,7 +14,7 @@ html.html {
 }
 html.html body {
   margin: 0;
-  background: #f5f5f5;
+  background: #F4EFE4;
 }
 .pagewrap {
   width: 864px;
@@ -158,7 +158,7 @@ p.p--with-bar {
 }
 .section {
   padding: 60px 0;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #CCC2AA;
 }
 .section h1 {
   text-align: center;
@@ -774,7 +774,7 @@ a:hover .arrow-link {
 .header.header--small {
   overflow: hidden;
   height: 54px;
-  background: #f5f5f5;
+  background: #F4EFE4;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
   pointer-events: all;
 }
